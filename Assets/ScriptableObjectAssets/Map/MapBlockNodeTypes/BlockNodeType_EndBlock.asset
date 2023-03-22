@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd962f59817de6478843737d05696fb, type: 3}
+  m_Name: BlockNodeType_EndBlock
+  m_EditorClassIdentifier: 
+  blockNodeTypeName: End Block
+  displayInMapGeneratorGraphEditor: 1
+  isStartBlock: 0
+  isConnectBlock: 0
+  isStepBlock: 0
+  isEndBlock: 1
+  isNone: 0

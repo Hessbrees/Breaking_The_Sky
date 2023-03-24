@@ -1,15 +1,21 @@
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.Plastic.Newtonsoft.Json.Bson;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.MPE;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BlockNodeGraphEditor : EditorWindow
 {
     private GUIStyle blockNodeStyle;
     private GUIStyle blockNodeSelectedStyle;
     private static BlockNodeGraphSO currentBlockNodeGraph;
+
+    private Vector2 graphOffset;
+    private Vector2 graphDrag;
+
     private BlockNodeSO currentBlockNode = null;
     private BlockNodeTypeListSO blockNodeTypeList;
 
@@ -22,6 +28,19 @@ public class BlockNodeGraphEditor : EditorWindow
     // Connecting line values
     private const float connectingLineWidth = 3f;
     private const float connectingLineArrowSize = 6f;
+
+    // Grid Spacing
+    private const float gridLarge = 100f;
+    private const float gridSmall = 25f;
+
+    // Block Nodes Position
+    private bool isNodesPositionBlocked = false;
+
+    // Block Nodes Selection
+    private bool isNodesSelectionBlocked = false;
+
+    // Block Window Moving
+    private bool isWindowMovingBlocked = false;
 
     [MenuItem("Map Generator Graph Editor", menuItem = "Window/Map Editor/Map Generator Graph Editor")]
     private static void OpenWindow()
@@ -52,7 +71,7 @@ public class BlockNodeGraphEditor : EditorWindow
 
         // Define node layout style
         blockNodeStyle = new GUIStyle();
-        blockNodeStyle.normal.textColor = Color.green;
+        blockNodeStyle.normal.textColor = Color.blue;
         blockNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
         blockNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         blockNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
@@ -67,14 +86,18 @@ public class BlockNodeGraphEditor : EditorWindow
         // Load Block node types
         blockNodeTypeList = GameResources.Instance.blockNodeTypeList;
     }
-    /// <summary>
-    /// Draw Editor Gui
-    /// </summary>
     private void OnGUI()
     {
+
         // If a scriptable object of type BlockNodeGraphSO has been selected then process
         if (currentBlockNodeGraph != null)
         {
+            VerticalControlers();
+
+            // Draw Grid
+            DrawBackgroundGrid(gridSmall, 0.2f, Color.gray);
+            DrawBackgroundGrid(gridLarge, 0.3f, Color.gray);
+
             // Draw line if being dragged
             DrawDraggedLine();
 
@@ -86,14 +109,53 @@ public class BlockNodeGraphEditor : EditorWindow
 
             // Draw block Nodes
             DrawBlockNodes();
+
         }
 
         if (GUI.changed)
         {
             Repaint();
         }
+
+    }
+    private void VerticalControlers()
+    {
+        GUILayout.BeginVertical();
+
+        isNodesPositionBlocked = EditorGUILayout.Toggle("Block Nodes Position ", BlockNodesPosition());
+        isNodesSelectionBlocked = EditorGUILayout.Toggle("Block Nodes Selection", BlockNodesSelection());
+        isWindowMovingBlocked = EditorGUILayout.Toggle("Block Window Moving", BlockWindowMoving());
+
+        GUILayout.EndVertical();
     }
 
+    /// <summary>
+    /// Draw a background grid for the block node graph editor
+    /// </summary>
+    private void DrawBackgroundGrid(float gridSize, float gridOpacity, Color gridColor)
+    {
+        int verticalLineCount = Mathf.CeilToInt((position.width + gridSize) / gridSize);
+        int horizontalLineCount = Mathf.CeilToInt((position.height + gridSize) / gridSize);
+
+        Handles.color = new Color(gridColor.r, gridColor.g, gridColor.b, gridOpacity);
+
+        graphOffset += graphDrag * 0.5f;
+
+        Vector3 gridOffset = new Vector3(graphOffset.x % gridSize, graphOffset.y % gridSize, 0);
+
+        for (int i = 0; i < verticalLineCount; i++)
+        {
+            Handles.DrawLine(new Vector3(gridSize * i, -gridSize, 0) + gridOffset, new Vector3(gridSize * i, position.height + gridSize, 0f) + gridOffset);
+        }
+
+        for (int j = 0; j < horizontalLineCount; j++)
+        {
+            Handles.DrawLine(new Vector3(-gridSize, gridSize * j, 0) + gridOffset, new Vector3(position.width + gridSize, gridSize * j, 0f) + gridOffset);
+        }
+
+        Handles.color = Color.white;
+
+    }
     private void DrawDraggedLine()
     {
         if (currentBlockNodeGraph.linePosition != Vector2.zero)
@@ -105,6 +167,9 @@ public class BlockNodeGraphEditor : EditorWindow
 
     private void ProcessEvents(Event currentEvent)
     {
+        // Reset graph drag
+        graphDrag = Vector2.zero;
+
         // Get block that mouse is over if it's null or not currently being dragged
         if (currentBlockNode == null || currentBlockNode.isLeftClickDragging == false)
         {
@@ -162,7 +227,7 @@ public class BlockNodeGraphEditor : EditorWindow
     }
     private void ProcessMouseDownEvent(Event currentEvent)
     {
-        if(currentEvent.button == 1)
+        if (currentEvent.button == 1)
         {
             ShowContextMenu(currentEvent.mousePosition);
         }
@@ -185,6 +250,37 @@ public class BlockNodeGraphEditor : EditorWindow
         menu.ShowAsContext();
 
     }
+
+    private bool BlockWindowMoving()
+    {
+        isWindowMovingBlocked = !isWindowMovingBlocked;
+
+        return isWindowMovingBlocked;
+    }
+
+    private bool BlockNodesSelection()
+    {
+        isNodesSelectionBlocked = !isNodesSelectionBlocked;
+
+        foreach (BlockNodeSO blockNode in currentBlockNodeGraph.blockNodeList)
+        {
+            blockNode.isNodesSelectionBlocked = isNodesSelectionBlocked;
+        }
+
+        return isNodesSelectionBlocked;
+    }
+    private bool BlockNodesPosition()
+    {
+        isNodesPositionBlocked = !isNodesPositionBlocked;
+
+        foreach (BlockNodeSO blockNode in currentBlockNodeGraph.blockNodeList)
+        {
+            blockNode.isNodesPositionBlocked = isNodesPositionBlocked;
+        }
+
+        return isNodesPositionBlocked;
+    }
+
     /// <summary>
     /// Create a block node at the mouse position
     /// </summary>
@@ -211,8 +307,9 @@ public class BlockNodeGraphEditor : EditorWindow
         currentBlockNodeGraph.blockNodeList.Add(blockNode);
 
         // set block node values
+
         blockNode.Initialise(new Rect(mousePosition, new Vector2(nodeWidth, nodeHeight)), currentBlockNodeGraph, blockNodeType);
-        
+
         // add block node to block node graph scriptable object asset database
         AssetDatabase.AddObjectToAsset(blockNode, currentBlockNodeGraph);
 
@@ -388,7 +485,11 @@ public class BlockNodeGraphEditor : EditorWindow
         {
             ProcessRightMouseDragEvent(currentEvent);
         }
-
+        // process left click drag event - drag node graph
+        else if (currentEvent.button == 0 && !isWindowMovingBlocked)
+        {
+            ProcessLeftMouseDragEvent(currentEvent.delta);
+        }
     }
     /// <summary>
     /// Process right mouse drag event  - draw line
@@ -401,7 +502,20 @@ public class BlockNodeGraphEditor : EditorWindow
             GUI.changed = true;
         }
     }
+    /// <summary>
+    /// Process left mouse drag event - drag block node graph
+    /// </summary>
+    private void ProcessLeftMouseDragEvent(Vector2 dragDelta)
+    {
+        graphDrag = dragDelta;
 
+        for (int i = 0; i < currentBlockNodeGraph.blockNodeList.Count; i++)
+        {
+            currentBlockNodeGraph.blockNodeList[i].DragNode(dragDelta);
+        }
+
+        GUI.changed = true;
+    }
     /// <summary>
     /// Draw connections in the graph window between block nodes
     /// </summary>
@@ -471,8 +585,9 @@ public class BlockNodeGraphEditor : EditorWindow
     private void DrawBlockNodes()
     {
         // Loop through all block nodes and draw them
-        foreach(BlockNodeSO blockNode in currentBlockNodeGraph.blockNodeList)
+        foreach (BlockNodeSO blockNode in currentBlockNodeGraph.blockNodeList)
         {
+            // todo more block nodes 
             if (blockNode.isSelected)
             {
                 blockNode.Draw(blockNodeSelectedStyle);

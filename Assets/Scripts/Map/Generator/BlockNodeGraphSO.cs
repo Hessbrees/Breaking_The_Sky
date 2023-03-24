@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BlockNodeGraph_", menuName = "Scriptable Objects/Map/Block Node Graph Editor")]
 public class BlockNodeGraphSO : ScriptableObject
 {
-    [HideInInspector] public BlockNodeTypeListSO startBlockNodeListSO;
+    [HideInInspector] public BlockNodeTypeListSO blockNodeListSO;
     [HideInInspector] public List<BlockNodeSO> blockNodeList = new List<BlockNodeSO>();
     [HideInInspector] public Dictionary<string, BlockNodeSO> blockNodeDictionary = new Dictionary<string, BlockNodeSO>();
 

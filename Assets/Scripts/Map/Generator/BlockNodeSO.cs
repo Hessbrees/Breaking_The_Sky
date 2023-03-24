@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Unity.VisualScripting;
+using UnityEditor.TerrainTools;
 
 [CreateAssetMenu(fileName = "BlockNode_", menuName = "Scriptable Objects/Map/Block Node")]
 public class BlockNodeSO : ScriptableObject
@@ -12,6 +16,11 @@ public class BlockNodeSO : ScriptableObject
     [HideInInspector] public BlockNodeGraphSO blockNodeGraph;
     public BlockNodeTypeSO blockNodeType;
     [HideInInspector] public BlockNodeTypeListSO blockNodeTypeList;
+    [HideInInspector] public StartBlockNode startBlockNode = new StartBlockNode();
+
+    // Start Node layout values
+    private const float startNodeWidth = 250f;
+    private const float startNodeHeight = 500f;
 
     #region Editor Code
 #if UNITY_EDITOR
@@ -19,6 +28,11 @@ public class BlockNodeSO : ScriptableObject
     [HideInInspector] public Rect rect;
     [HideInInspector] public bool isLeftClickDragging = false;
     [HideInInspector] public bool isSelected = false;
+
+    // Block Nodes Position
+    [HideInInspector] public bool isNodesPositionBlocked = false;
+    [HideInInspector] public bool isNodesSelectionBlocked = false;
+
 
     /// <summary>
     /// Initialise node
@@ -35,20 +49,32 @@ public class BlockNodeSO : ScriptableObject
         blockNodeTypeList = GameResources.Instance.blockNodeTypeList;
     }
 
+    private Rect GetBlockRect(Rect rect)
+    {
+        if (blockNodeType.isStartBlock)
+        {
+            return new Rect(rect.position.x, rect.position.y, startNodeWidth, startNodeHeight);
+        }
+        else return rect;
+
+    }
+
     /// <summary>
     /// Draw node with the nodestyle
     /// </summary>
     public void Draw(GUIStyle nodeStyle)
     {
+
         // Draw Node Box Using Begin Area
-        GUILayout.BeginArea(rect, nodeStyle);
+        //GUILayout.BeginArea(rect, nodeStyle);
+        GUILayout.BeginArea(GetBlockRect(rect), nodeStyle);
 
         // Start Region To Detect Popup Selection Changes
         EditorGUI.BeginChangeCheck();
-        // if the room node has a parent or is of type entrance then display a label else display a popup
+
+        // if the room node has a parent or is of type start then display a label else display a popup
         if (parentBlockNodeIDList.Count > 0 || blockNodeType.isStartBlock)
         {
-            // Display a label that can't be changed
             EditorGUILayout.LabelField(blockNodeType.blockNodeTypeName);
         }
         else
@@ -60,12 +86,41 @@ public class BlockNodeSO : ScriptableObject
 
             blockNodeType = blockNodeTypeList.list[selection];
         }
+
+        if (blockNodeType.isStartBlock)
+        DrawStartBlock();
+
         if (EditorGUI.EndChangeCheck())
             EditorUtility.SetDirty(this);
 
         GUILayout.EndArea();
-    }
 
+    }
+    private void DrawStartBlock()
+    {
+
+        EditorGUILayout.LabelField("Block name: ");
+        startBlockNode.startBlockName = EditorGUILayout.TextField(startBlockNode.startBlockName);
+
+        EditorGUILayout.LabelField("Base spawn amount every day: ");
+        startBlockNode.baseFactor = EditorGUILayout.IntField(startBlockNode.baseFactor);
+
+        EditorGUILayout.LabelField("Temperature spawn factor: ");
+        startBlockNode.minTemperature = EditorGUILayout.Slider(startBlockNode.minTemperature, 0, 100);
+        startBlockNode.maxTemperature = EditorGUILayout.Slider(startBlockNode.maxTemperature, 0, 100);
+        EditorGUILayout.MinMaxSlider(ref startBlockNode.minTemperature, ref startBlockNode.maxTemperature, 0, 100);
+
+        EditorGUILayout.LabelField("Polution spawn factor: ");
+        startBlockNode.minPolution = EditorGUILayout.Slider(startBlockNode.minPolution, 0, 100);
+        startBlockNode.maxPolution = EditorGUILayout.Slider(startBlockNode.maxPolution, 0, 100);
+        EditorGUILayout.MinMaxSlider(ref startBlockNode.minPolution, ref startBlockNode.maxPolution, 0, 100);
+
+        EditorGUILayout.LabelField("Radiation spawn factor: ");
+        startBlockNode.minRadiation = EditorGUILayout.Slider(startBlockNode.minRadiation, 0, 100);
+        startBlockNode.maxRadiation = EditorGUILayout.Slider(startBlockNode.maxRadiation, 0, 100);
+        EditorGUILayout.MinMaxSlider(ref startBlockNode.minRadiation, ref startBlockNode.maxRadiation, 0, 100);
+
+    }
     /// <summary>
     /// Populate a string array with the block node types to display that can be selected
     /// </summary>
@@ -93,7 +148,7 @@ public class BlockNodeSO : ScriptableObject
         {
             // Process Mouse Down Events
             case EventType.MouseDown:
-                ProcessMouseDownEvent(currentEvent);
+                if (!isNodesSelectionBlocked) ProcessMouseDownEvent(currentEvent);
                 break;
 
             // Process Mouse Up Events
@@ -103,7 +158,7 @@ public class BlockNodeSO : ScriptableObject
 
             // Process Mouse Drag Events
             case EventType.MouseDrag:
-                ProcessMouseDragEvent(currentEvent);
+                if (!isNodesPositionBlocked) ProcessMouseDragEvent(currentEvent);
                 break;
 
             default:
@@ -261,7 +316,7 @@ public class BlockNodeSO : ScriptableObject
             return false;
 
         // If this is a end block return false
-        if(blockNodeType.isEndBlock) 
+        if (blockNodeType.isEndBlock)
             return false;
 
         return true;

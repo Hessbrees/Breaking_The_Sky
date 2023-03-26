@@ -19,6 +19,21 @@ public class BlockNodeSO : ScriptableObject
     [HideInInspector] public ConnectBlockNode connectBlockNode;
     [HideInInspector] public StepBlockNode stepBlockNode;
     [HideInInspector] public StartBlockNode startBlockNode;
+
+
+    #region Editor Code
+#if UNITY_EDITOR
+
+    [HideInInspector] public Rect rect;
+    [HideInInspector] public Rect selectableRect;
+    [HideInInspector] public bool isLeftClickDragging = false;
+    [HideInInspector] public bool isSelected = false;
+
+    // Block Nodes Position
+    [HideInInspector] public bool isNodesPositionBlocked = false;
+    [HideInInspector] public bool isNodesSelectionBlocked = false;
+
+
     // Start Node layout values
     private const float startNodeWidth = 250f;
     private const float startNodeHeight = 450f;
@@ -26,18 +41,8 @@ public class BlockNodeSO : ScriptableObject
     private const float connectNodeHeight = 350f;
     private const float stepNodeWidth = 250f;
     private const float stepNodeHeight = 150f;
-
-    #region Editor Code
-#if UNITY_EDITOR
-
-    [HideInInspector] public Rect rect;
-    [HideInInspector] public bool isLeftClickDragging = false;
-    [HideInInspector] public bool isSelected = false;
-
-    // Block Nodes Position
-    [HideInInspector] public bool isNodesPositionBlocked = false;
-    [HideInInspector] public bool isNodesSelectionBlocked = false;
-    private GUIStyle titleStyle;
+    private const float BlockNodeSelectionHeight = 15f;
+    private const float BlockNodeSelectionWidth = 120f;
     /// <summary>
     /// Initialise node
     /// </summary>
@@ -48,18 +53,15 @@ public class BlockNodeSO : ScriptableObject
         this.name = "BlockNode";
         this.blockNodeGraph = nodeGraph;
         this.blockNodeType = blockNodeType;
+        this.selectableRect = GetBlockSelectablePlace();
 
         // Load block node type list
         blockNodeTypeList = GameResources.Instance.blockNodeTypeList;
-
-        titleStyle = new GUIStyle();
-        titleStyle.normal.textColor = Color.green;
-        titleStyle.fontStyle = FontStyle.Bold;
-        titleStyle.fontSize = 18;
-
-
     }
-
+    public Rect GetBlockSelectablePlace()
+    {
+        return new Rect(rect.position.x + GetBlockRect(rect).width/2 - (GetBlockRect(rect).width - 40) /2, rect.position.y + 10, GetBlockRect(rect).width -40, BlockNodeSelectionHeight);
+    }
     public Rect GetBlockRect(Rect rect)
     {
         if (blockNodeType.isStartBlock)
@@ -80,12 +82,14 @@ public class BlockNodeSO : ScriptableObject
     /// <summary>
     /// Draw node with the nodestyle
     /// </summary>
-    public void Draw(GUIStyle nodeStyle)
+    public void Draw(GUIStyle nodeStyle, GUIStyle titleStyle, GUIStyle selectableStyle)
     {
 
         // Draw Node Box Using Begin Area
-        //GUILayout.BeginArea(rect, nodeStyle);
         GUILayout.BeginArea(GetBlockRect(rect), nodeStyle);
+
+        // check selectable rect change
+        selectableRect = GetBlockSelectablePlace();
 
         // Start Region To Detect Popup Selection Changes
         EditorGUI.BeginChangeCheck();
@@ -139,6 +143,8 @@ public class BlockNodeSO : ScriptableObject
 
         GUILayout.EndArea();
 
+        GUILayout.BeginArea(selectableRect, selectableStyle);
+        GUILayout.EndArea();
     }
     public void CreateStartBlockNode(BlockNodeSO blockNode)
     {
@@ -310,6 +316,7 @@ public class BlockNodeSO : ScriptableObject
     public void DragNode(Vector2 delta)
     {
         rect.position += delta;
+        selectableRect.position += delta;
         EditorUtility.SetDirty(this);
     }
 

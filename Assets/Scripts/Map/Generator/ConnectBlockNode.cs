@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-
+[Serializable]
 public class ConnectBlockNode
 {
 
@@ -42,12 +42,12 @@ public class ConnectBlockNode
 
         EditorGUILayout.LabelField("Polution spawn factor: ");
         minPolution = EditorGUILayout.Slider(minPolution, 0, maxPolution);
-        maxPolution = EditorGUILayout.Slider(maxPolution, minTemperature, 100);
+        maxPolution = EditorGUILayout.Slider(maxPolution, minPolution, 100);
         EditorGUILayout.MinMaxSlider(ref minPolution, ref maxPolution, 0, 100);
 
         EditorGUILayout.LabelField("Radiation spawn factor: ");
         minRadiation = EditorGUILayout.Slider(minRadiation, 0, maxRadiation);
-        maxRadiation = EditorGUILayout.Slider(maxRadiation, minTemperature, 100);
+        maxRadiation = EditorGUILayout.Slider(maxRadiation, minRadiation, 100);
         EditorGUILayout.MinMaxSlider(ref minRadiation, ref maxRadiation, 0, 100);
 
     }

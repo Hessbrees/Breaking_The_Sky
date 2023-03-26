@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
+[Serializable]
 public class StartBlockNode
 {
     // Chance to spawn every time step (for exaple: 1 clock tick => 5 min in game, then 288 tick => 1 day in game) 

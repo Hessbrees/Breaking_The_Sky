@@ -1,17 +1,15 @@
-using Codice.CM.Client.Differences.Graphic;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.Plastic.Newtonsoft.Json.Bson;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEditor.MPE;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BlockNodeGraphEditor : EditorWindow
 {
     private GUIStyle blockNodeStyle;
     private GUIStyle blockNodeSelectedStyle;
+    private GUIStyle blockNodeSelectablePlaceStyle;
+    private GUIStyle titleStyle;
     private static BlockNodeGraphSO currentBlockNodeGraph;
 
     private Vector2 graphOffset;
@@ -42,6 +40,9 @@ public class BlockNodeGraphEditor : EditorWindow
 
     // Block Window Moving
     private bool isWindowMovingBlocked = false;
+
+    // Move Screen By Arrows Strenght
+    private float graphMoveStrenght = 40f;
 
     [MenuItem("Map Generator Graph Editor", menuItem = "Window/Map Editor/Map Generator Graph Editor")]
     private static void OpenWindow()
@@ -76,13 +77,23 @@ public class BlockNodeGraphEditor : EditorWindow
         blockNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
         blockNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         blockNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
-        
+
         // Define selected node style
         blockNodeSelectedStyle = new GUIStyle();
         blockNodeSelectedStyle.normal.background = EditorGUIUtility.Load("node1 on") as Texture2D;
         blockNodeSelectedStyle.normal.textColor = Color.white;
         blockNodeSelectedStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         blockNodeSelectedStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
+
+        Texture2D selectablePlaceTexture = Texture2D.grayTexture;
+             
+        blockNodeSelectablePlaceStyle = new GUIStyle();
+        blockNodeSelectablePlaceStyle.normal.background = selectablePlaceTexture;
+
+        titleStyle = new GUIStyle();
+        titleStyle.normal.textColor = Color.green;
+        titleStyle.fontStyle = FontStyle.Bold;
+        titleStyle.fontSize = 18;
 
         // Load Block node types
         blockNodeTypeList = GameResources.Instance.blockNodeTypeList;
@@ -188,6 +199,9 @@ public class BlockNodeGraphEditor : EditorWindow
             // process block node events
             currentBlockNode.ProcessEvents(currentEvent);
         }
+
+        ProcessKeyboardArrowsEvent(currentEvent);
+
     }
     /// <summary>
     ///  Check to see to mouse is over a block node - if so then return the block node else return null
@@ -196,7 +210,7 @@ public class BlockNodeGraphEditor : EditorWindow
     {
         for (int i = currentBlockNodeGraph.blockNodeList.Count - 1; i >= 0; i--)
         {
-            if (currentBlockNodeGraph.blockNodeList[i].GetBlockRect(currentBlockNodeGraph.blockNodeList[i].rect).Contains(currentEvent.mousePosition))
+            if (currentBlockNodeGraph.blockNodeList[i].selectableRect.Contains(currentEvent.mousePosition))
             {
                 return currentBlockNodeGraph.blockNodeList[i];
             }
@@ -221,7 +235,6 @@ public class BlockNodeGraphEditor : EditorWindow
             case EventType.MouseDrag:
                 ProcessMouseDragEvent(currentEvent);
                 break;
-
             default:
                 break;
         }
@@ -306,7 +319,7 @@ public class BlockNodeGraphEditor : EditorWindow
 
         // add block node to current block node graph block node list
         currentBlockNodeGraph.blockNodeList.Add(blockNode);
-        
+
         // set block node values
 
         blockNode.Initialise(new Rect(mousePosition, new Vector2(nodeWidth, nodeHeight)), currentBlockNodeGraph, blockNodeType);
@@ -487,10 +500,27 @@ public class BlockNodeGraphEditor : EditorWindow
         {
             ProcessRightMouseDragEvent(currentEvent);
         }
-        // process left click drag event - drag node graph
-        else if (currentEvent.button == 0 && !isWindowMovingBlocked)
+    }
+    private void ProcessKeyboardArrowsEvent(Event currentEvent)
+    {
+        if (!currentEvent.isKey && isWindowMovingBlocked) return;
+
+        // One key clicked events
+        else if(currentEvent.keyCode == KeyCode.LeftArrow)
         {
-            ProcessLeftMouseDragEvent(currentEvent.delta);
+            ProcessKeyboardArrowsEvent(new Vector2(graphMoveStrenght, 0));
+        }     
+        else if(currentEvent.keyCode == KeyCode.RightArrow)
+        {
+            ProcessKeyboardArrowsEvent(new Vector2(-graphMoveStrenght, 0));
+        }        
+        else if (currentEvent.keyCode == KeyCode.UpArrow)
+        {
+            ProcessKeyboardArrowsEvent(new Vector2(0,graphMoveStrenght));
+        }       
+        else if (currentEvent.keyCode == KeyCode.DownArrow)
+        {
+            ProcessKeyboardArrowsEvent(new Vector2(0,-graphMoveStrenght));
         }
     }
     /// <summary>
@@ -507,7 +537,7 @@ public class BlockNodeGraphEditor : EditorWindow
     /// <summary>
     /// Process left mouse drag event - drag block node graph
     /// </summary>
-    private void ProcessLeftMouseDragEvent(Vector2 dragDelta)
+    private void ProcessKeyboardArrowsEvent(Vector2 dragDelta)
     {
         graphDrag = dragDelta;
 
@@ -594,11 +624,11 @@ public class BlockNodeGraphEditor : EditorWindow
             // todo more block nodes 
             if (blockNode.isSelected)
             {
-                blockNode.Draw(blockNodeSelectedStyle);
+                blockNode.Draw(blockNodeSelectedStyle,titleStyle, blockNodeSelectablePlaceStyle);
             }
             else
             {
-                blockNode.Draw(blockNodeStyle);
+                blockNode.Draw(blockNodeStyle, titleStyle, blockNodeSelectablePlaceStyle);
             }
         }
 

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
+[Serializable]
 public class StepBlockNode 
 {
     public GameObject stepBlockPrefab;

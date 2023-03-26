@@ -10,14 +10,14 @@ public class BlockNodeGraphSO : ScriptableObject
 
     private void Awake()
     {
-        LoadRoomNodeDictionary();
+        LoadBlockNodeDictionary();
 
     }
 
     /// <summary>
     /// Load the block node dictionary from the block node list.
     /// </summary>
-    private void LoadRoomNodeDictionary()
+    private void LoadBlockNodeDictionary()
     {
         blockNodeDictionary.Clear();
 
@@ -48,7 +48,7 @@ public class BlockNodeGraphSO : ScriptableObject
     // Repopulate node dictionary every time a change is made in the editor
     public void OnValidate()
     {
-        LoadRoomNodeDictionary();
+        LoadBlockNodeDictionary();
     }
 
     public void SetNodeToDrawConnectionLineFrom(BlockNodeSO node, Vector2 position)

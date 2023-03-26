@@ -16,11 +16,16 @@ public class BlockNodeSO : ScriptableObject
     [HideInInspector] public BlockNodeGraphSO blockNodeGraph;
     public BlockNodeTypeSO blockNodeType;
     [HideInInspector] public BlockNodeTypeListSO blockNodeTypeList;
-    [HideInInspector] public StartBlockNode startBlockNode = new StartBlockNode();
-
+    [HideInInspector] public ConnectBlockNode connectBlockNode;
+    [HideInInspector] public StepBlockNode stepBlockNode;
+    [HideInInspector] public StartBlockNode startBlockNode;
     // Start Node layout values
     private const float startNodeWidth = 250f;
-    private const float startNodeHeight = 500f;
+    private const float startNodeHeight = 450f;
+    private const float connectNodeWidth = 250f;
+    private const float connectNodeHeight = 350f;
+    private const float stepNodeWidth = 250f;
+    private const float stepNodeHeight = 150f;
 
     #region Editor Code
 #if UNITY_EDITOR
@@ -32,8 +37,7 @@ public class BlockNodeSO : ScriptableObject
     // Block Nodes Position
     [HideInInspector] public bool isNodesPositionBlocked = false;
     [HideInInspector] public bool isNodesSelectionBlocked = false;
-
-
+    private GUIStyle titleStyle;
     /// <summary>
     /// Initialise node
     /// </summary>
@@ -41,22 +45,36 @@ public class BlockNodeSO : ScriptableObject
     {
         this.rect = rect;
         this.id = Guid.NewGuid().ToString();
-        this.name = "RoomNode";
+        this.name = "BlockNode";
         this.blockNodeGraph = nodeGraph;
         this.blockNodeType = blockNodeType;
 
         // Load block node type list
         blockNodeTypeList = GameResources.Instance.blockNodeTypeList;
+
+        titleStyle = new GUIStyle();
+        titleStyle.normal.textColor = Color.green;
+        titleStyle.fontStyle = FontStyle.Bold;
+        titleStyle.fontSize = 18;
+
+
     }
 
-    private Rect GetBlockRect(Rect rect)
+    public Rect GetBlockRect(Rect rect)
     {
         if (blockNodeType.isStartBlock)
         {
             return new Rect(rect.position.x, rect.position.y, startNodeWidth, startNodeHeight);
         }
+        else if (blockNodeType.isConnectBlock)
+        {
+            return new Rect(rect.position.x, rect.position.y, connectNodeWidth, connectNodeHeight);
+        }
+        else if(blockNodeType.isStepBlock)
+        {
+            return new Rect(rect.position.x, rect.position.y, stepNodeWidth, stepNodeHeight);
+        }
         else return rect;
-
     }
 
     /// <summary>
@@ -72,10 +90,11 @@ public class BlockNodeSO : ScriptableObject
         // Start Region To Detect Popup Selection Changes
         EditorGUI.BeginChangeCheck();
 
-        // if the room node has a parent or is of type start then display a label else display a popup
+        // if the block node has a parent or is of type start then display a label else display a popup
         if (parentBlockNodeIDList.Count > 0 || blockNodeType.isStartBlock)
         {
-            EditorGUILayout.LabelField(blockNodeType.blockNodeTypeName);
+
+            EditorGUILayout.LabelField(blockNodeType.blockNodeTypeName, titleStyle);
         }
         else
         {
@@ -88,7 +107,32 @@ public class BlockNodeSO : ScriptableObject
         }
 
         if (blockNodeType.isStartBlock)
-        DrawStartBlock();
+        {
+            if (startBlockNode == null)
+            {
+                CreateStartBlockNode(this);
+            }
+
+            startBlockNode.DrawStartBlock();
+        }
+
+        if (blockNodeType.isConnectBlock)
+        {
+            if (connectBlockNode == null)
+            {
+                CreateConnectBlockNode(this);
+            }
+            connectBlockNode.DrawConnectBlock();
+        }
+
+        if (blockNodeType.isStepBlock)
+        {
+            if (stepBlockNode == null)
+            {
+                CreateStepBlockNode(this);
+            }
+            stepBlockNode.DrawStepBlock();
+        }
 
         if (EditorGUI.EndChangeCheck())
             EditorUtility.SetDirty(this);
@@ -96,47 +140,57 @@ public class BlockNodeSO : ScriptableObject
         GUILayout.EndArea();
 
     }
-    private void DrawStartBlock()
+    public void CreateStartBlockNode(BlockNodeSO blockNode)
     {
+        // create start block node
+        startBlockNode = new StartBlockNode();
 
-        EditorGUILayout.LabelField("Block name: ");
-        startBlockNode.startBlockName = EditorGUILayout.TextField(startBlockNode.startBlockName);
+        // initialize new start block node component
+        this.name = "StartBlockNode";
 
-        EditorGUILayout.LabelField("Base spawn amount every day: ");
-        startBlockNode.baseFactor = EditorGUILayout.IntField(startBlockNode.baseFactor);
-
-        EditorGUILayout.LabelField("Temperature spawn factor: ");
-        startBlockNode.minTemperature = EditorGUILayout.Slider(startBlockNode.minTemperature, 0, 100);
-        startBlockNode.maxTemperature = EditorGUILayout.Slider(startBlockNode.maxTemperature, 0, 100);
-        EditorGUILayout.MinMaxSlider(ref startBlockNode.minTemperature, ref startBlockNode.maxTemperature, 0, 100);
-
-        EditorGUILayout.LabelField("Polution spawn factor: ");
-        startBlockNode.minPolution = EditorGUILayout.Slider(startBlockNode.minPolution, 0, 100);
-        startBlockNode.maxPolution = EditorGUILayout.Slider(startBlockNode.maxPolution, 0, 100);
-        EditorGUILayout.MinMaxSlider(ref startBlockNode.minPolution, ref startBlockNode.maxPolution, 0, 100);
-
-        EditorGUILayout.LabelField("Radiation spawn factor: ");
-        startBlockNode.minRadiation = EditorGUILayout.Slider(startBlockNode.minRadiation, 0, 100);
-        startBlockNode.maxRadiation = EditorGUILayout.Slider(startBlockNode.maxRadiation, 0, 100);
-        EditorGUILayout.MinMaxSlider(ref startBlockNode.minRadiation, ref startBlockNode.maxRadiation, 0, 100);
-
+        // save changes in project
+        AssetDatabase.SaveAssets();
     }
+
+    public void CreateConnectBlockNode(BlockNodeSO blockNode)
+    {
+        // create start block node
+        connectBlockNode = new ConnectBlockNode();
+
+        // initialize new connect block node component
+        this.name = "ConnectBlockNode";
+
+        // save changes in project
+        AssetDatabase.SaveAssets();
+    }
+    public void CreateStepBlockNode(BlockNodeSO blockNode)
+    {
+        // create start block node
+        stepBlockNode = new StepBlockNode();
+
+        // initialize new connect block node component
+        this.name = "StepBlockNode";
+
+        // save changes in project
+        AssetDatabase.SaveAssets();
+    }
+
     /// <summary>
     /// Populate a string array with the block node types to display that can be selected
     /// </summary>
     public string[] GetBlockNodeTypesToDisplay()
     {
-        string[] roomArray = new string[blockNodeTypeList.list.Count];
+        string[] blockArray = new string[blockNodeTypeList.list.Count];
 
         for (int i = 0; i < blockNodeTypeList.list.Count; i++)
         {
             if (blockNodeTypeList.list[i].displayInBlockGraphEditor)
             {
-                roomArray[i] = blockNodeTypeList.list[i].blockNodeTypeName;
+                blockArray[i] = blockNodeTypeList.list[i].blockNodeTypeName;
             }
         }
 
-        return roomArray;
+        return blockArray;
     }
 
     /// <summary>
@@ -265,7 +319,7 @@ public class BlockNodeSO : ScriptableObject
     public bool AddChildBlockNodeIDToBlockNode(string childID)
     {
         // Check child node can be added validly to parent
-        if (IsChildRoomValid(childID))
+        if (IsChildBlockValid(childID))
         {
             childBlockNodeIDList.Add(childID);
             return true;
@@ -276,7 +330,7 @@ public class BlockNodeSO : ScriptableObject
     /// <summary>
     /// Check the child node can be validly added to the parent node - return true if it can otherwise return false
     /// </summary>
-    public bool IsChildRoomValid(string childID)
+    public bool IsChildBlockValid(string childID)
     {
 
         // If this node ID and the child ID are the same return false
@@ -311,7 +365,7 @@ public class BlockNodeSO : ScriptableObject
         if (blockNodeGraph.GetBlockNode(childID).blockNodeType.isStartBlock)
             return false;
 
-        // If adding a block to connect block check that this connect block doesn't already have a room added
+        // If adding a block to connect block check that this connect block doesn't already have a block added
         if (!blockNodeGraph.GetBlockNode(childID).blockNodeType.isConnectBlock && childBlockNodeIDList.Count > 0)
             return false;
 
@@ -359,6 +413,10 @@ public class BlockNodeSO : ScriptableObject
         }
         return false;
     }
+
+
+
 #endif
     #endregion Editor Code
+
 }

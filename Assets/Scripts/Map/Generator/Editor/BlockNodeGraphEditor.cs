@@ -1,3 +1,4 @@
+using Codice.CM.Client.Differences.Graphic;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.Plastic.Newtonsoft.Json.Bson;
@@ -71,11 +72,11 @@ public class BlockNodeGraphEditor : EditorWindow
 
         // Define node layout style
         blockNodeStyle = new GUIStyle();
-        blockNodeStyle.normal.textColor = Color.blue;
+        blockNodeStyle.normal.textColor = Color.white;
         blockNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
         blockNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         blockNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
-
+        
         // Define selected node style
         blockNodeSelectedStyle = new GUIStyle();
         blockNodeSelectedStyle.normal.background = EditorGUIUtility.Load("node1 on") as Texture2D;
@@ -195,7 +196,7 @@ public class BlockNodeGraphEditor : EditorWindow
     {
         for (int i = currentBlockNodeGraph.blockNodeList.Count - 1; i >= 0; i--)
         {
-            if (currentBlockNodeGraph.blockNodeList[i].rect.Contains(currentEvent.mousePosition))
+            if (currentBlockNodeGraph.blockNodeList[i].GetBlockRect(currentBlockNodeGraph.blockNodeList[i].rect).Contains(currentEvent.mousePosition))
             {
                 return currentBlockNodeGraph.blockNodeList[i];
             }
@@ -305,7 +306,7 @@ public class BlockNodeGraphEditor : EditorWindow
 
         // add block node to current block node graph block node list
         currentBlockNodeGraph.blockNodeList.Add(blockNode);
-
+        
         // set block node values
 
         blockNode.Initialise(new Rect(mousePosition, new Vector2(nodeWidth, nodeHeight)), currentBlockNodeGraph, blockNodeType);
@@ -317,6 +318,7 @@ public class BlockNodeGraphEditor : EditorWindow
 
         // Refresh graph node dictionary
         currentBlockNodeGraph.OnValidate();
+
     }
 
     /// <summary>
@@ -546,8 +548,10 @@ public class BlockNodeGraphEditor : EditorWindow
     private void DrawConnectionLine(BlockNodeSO parentblockNode, BlockNodeSO childblockNode)
     {
         // get line start and end position
-        Vector2 startPosition = parentblockNode.rect.center;
-        Vector2 endPosition = childblockNode.rect.center;
+        //Vector2 startPosition = parentblockNode.rect.center;
+        //Vector2 endPosition = childblockNode.rect.center;
+        Vector2 startPosition = parentblockNode.GetBlockRect(parentblockNode.rect).center;
+        Vector2 endPosition = childblockNode.GetBlockRect(childblockNode.rect).center;
 
         // calculate midway point
         Vector2 midPosition = (endPosition + startPosition) / 2f;

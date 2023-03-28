@@ -1,10 +1,13 @@
 using UnityEngine;
 using TMPro;
+using Zenject;
 
 [DisallowMultipleComponent]
 public class TimeClock : MonoBehaviour
 {
-    [SerializeField] private TimeChangeEvent timeChangeEvent;
+    [Inject(Id ="TimeManager")]
+    private TimeChangeEvent timeChangeEvent;
+
     [SerializeField] private TextMeshProUGUI time;
 
     private void OnEnable()
@@ -19,8 +22,6 @@ public class TimeClock : MonoBehaviour
     private void UpdateClock_OnTimeChange(TimeChangeEvent timeChangeEvent,TimeChangeArg timeChangeArg)
     {
         UpdateTimeClock(timeChangeArg.gameMinute, timeChangeArg.gameHour);
-
-        Debug.Log("time " + ShowTime(timeChangeArg.gameMinute, timeChangeArg.gameHour));
     }
 
     private void UpdateTimeClock(int gameMinutes, int gameHours)
@@ -30,7 +31,7 @@ public class TimeClock : MonoBehaviour
 
     public string ShowTime(int gameMinute, int gameHour)
     {
-        return gameHour.ToString("hh") + ":" + gameMinute.ToString("mm");
+        return gameHour.ToString("D2") + ":" + gameMinute.ToString("D2");
     }
 
     public string ShowDay(int gameDay)

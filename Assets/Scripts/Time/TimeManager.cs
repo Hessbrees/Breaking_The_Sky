@@ -7,15 +7,13 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class TimeManager : MonoBehaviour
 {
-    public static event Action<string> OnTimeChangeEvent;
-
-    [HideInInspector] public TimeChangeEvent timeChangeEvemt;
+    [HideInInspector] public TimeChangeEvent timeChangeEvent;
 
     private Biome currentBiome;
     
     private int gameDay = 1;
     private int gameHour = 6;
-    private int gameMinute = 0;
+    public int gameMinute = 0;
 
     private bool gamePaused = false;
 
@@ -23,7 +21,7 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        timeChangeEvemt = GetComponent<TimeChangeEvent>();
+        timeChangeEvent = GetComponent<TimeChangeEvent>();
     }
     private void Update()
     {
@@ -63,9 +61,7 @@ public class TimeManager : MonoBehaviour
 
         }
 
-        Debug.Log("time event called: " + gameMinute);
-
-        timeChangeEvemt.CallTimeChangeEvent(currentBiome, gameDay, gameHour, gameMinute);
+        timeChangeEvent.CallTimeChangeEvent(currentBiome, gameDay, gameHour, gameMinute);
     }
 
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public static class Settings
 {
-    #region BLOCK SETTINGS
-
-    #endregion
-
-
+    // Time system
+    // second in real time in game time interval 
+    public const float secondsPerGameInterval = 2f;
+    // minutes in game time interval
+    public const int timeInterval = 5;
     public static bool CheckValueInRange(float value,float minValue, float maxValue)
     {
         if(value >= minValue && value <= maxValue)

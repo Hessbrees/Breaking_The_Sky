@@ -1,0 +1,408 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8734413349337738598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: 90585fac-de69-42bf-a0ca-c785a9fc3604
+  parentBlockNodeIDList: []
+  childBlockNodeIDList:
+  - e06e7bde-d4b8-4677-b51c-d0422e5b8c09
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: 8a796006a86281f40beeacd855968857, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 4
+    minTemperature: 10.1
+    maxTemperature: 41.5
+    minPolution: 18.2
+    maxPolution: 58.5
+    minRadiation: 7.2
+    maxRadiation: 23.7
+    startBlockPrefab: {fileID: 8985992159194099402, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
+  rect:
+    serializedVersion: 2
+    x: 308
+    y: 30
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 328
+    y: 40
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &-5368733670114642281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: df702d1c-4a78-4842-b28d-f73f6edcaf12
+  parentBlockNodeIDList: []
+  childBlockNodeIDList:
+  - 2b5fccdc-2a8d-4ffc-b745-58d186a3b8a2
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: 8a796006a86281f40beeacd855968857, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 320
+    y: 488
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 340
+    y: 498
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &-5213079447134307493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: 81bda733-7832-4f20-a09f-297d2191c090
+  parentBlockNodeIDList:
+  - a944a203-e27d-484e-aed1-cc3157060a48
+  - 2b5fccdc-2a8d-4ffc-b745-58d186a3b8a2
+  childBlockNodeIDList: []
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: ad60624e7ac0b494185e9502ed7aeaac, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 1406
+    y: 582
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1426
+    y: 592
+    width: 120
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &-2413957736560921667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: a093d47f-98e6-4627-bf05-49394635afe1
+  parentBlockNodeIDList:
+  - e06e7bde-d4b8-4677-b51c-d0422e5b8c09
+  childBlockNodeIDList:
+  - a944a203-e27d-484e-aed1-cc3157060a48
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: a90391a0555a1fb41b9f3fc6a02494d5, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 1028
+    y: 146
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1048
+    y: 156
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &-1759677337947580029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: e06e7bde-d4b8-4677-b51c-d0422e5b8c09
+  parentBlockNodeIDList:
+  - 90585fac-de69-42bf-a0ca-c785a9fc3604
+  childBlockNodeIDList:
+  - a093d47f-98e6-4627-bf05-49394635afe1
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 677
+    y: 78
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 697
+    y: 88
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3472e4b64eac62645af1b5eb86082432, type: 3}
+  m_Name: BlockNodeGraph_
+  m_EditorClassIdentifier: 
+  blockNodeListSO: {fileID: 0}
+  blockNodeList:
+  - {fileID: -8734413349337738598}
+  - {fileID: -1759677337947580029}
+  - {fileID: -5368733670114642281}
+  - {fileID: -2413957736560921667}
+  - {fileID: 311259859101347254}
+  - {fileID: -5213079447134307493}
+  - {fileID: 3033789967674060422}
+  blockNodeToDrawLineFrom: {fileID: 0}
+  linePosition: {x: 0, y: 0}
+--- !u!114 &311259859101347254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: a944a203-e27d-484e-aed1-cc3157060a48
+  parentBlockNodeIDList:
+  - a093d47f-98e6-4627-bf05-49394635afe1
+  childBlockNodeIDList:
+  - 81bda733-7832-4f20-a09f-297d2191c090
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 1355
+    y: 63
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1375
+    y: 73
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
+--- !u!114 &3033789967674060422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a16a0ce5fc25694e8f9cc4b1f6425c8, type: 3}
+  m_Name: BlockNode
+  m_EditorClassIdentifier: 
+  id: 2b5fccdc-2a8d-4ffc-b745-58d186a3b8a2
+  parentBlockNodeIDList:
+  - df702d1c-4a78-4842-b28d-f73f6edcaf12
+  childBlockNodeIDList:
+  - 81bda733-7832-4f20-a09f-297d2191c090
+  blockNodeGraph: {fileID: 11400000}
+  blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
+  blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  connectBlockNode:
+    connectBlockPoints: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+  stepBlockNode:
+    stepBlockPrefab: {fileID: 0}
+  startBlockNode:
+    baseFactor: 0
+    minTemperature: 0
+    maxTemperature: 0
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
+    startBlockPrefab: {fileID: 0}
+  rect:
+    serializedVersion: 2
+    x: 715
+    y: 576
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 735
+    y: 586
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1

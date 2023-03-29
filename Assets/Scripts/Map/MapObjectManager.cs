@@ -13,7 +13,7 @@ public class MapObjectManager : MonoBehaviour
 
     private List<BlockNodeSO> startObjectsList = new List<BlockNodeSO>();
     private List<GameObject> currentMapObjectList = new List<GameObject>();
-
+    public List<Vector2> availablePositions;
     private void Awake()
     {
         GetStartObjects();
@@ -38,17 +38,29 @@ public class MapObjectManager : MonoBehaviour
         {
             startObjectsList.Add(startObjectQueue.Dequeue());
         }
-
-
     }
-    public void UpdateObjectInMap(float temperature, float pollution, float radiation, int[] tileMapBorder)
+    public void FillAvailablePositionList(int[] tileMapBoards)
     {
+        for(int x = tileMapBoards[0]; x < tileMapBoards[1] ; x++)
+            for (int y = tileMapBoards[0]; y < tileMapBoards[1]; y++)
+            {
+                availablePositions.Add(new Vector2(x,y));
+            }
+    }
+
+    public void UpdateObjectInMap(float temperature, float pollution, float radiation)
+    {
+        if(availablePositions.Count == 0) return;
+
         foreach (var blockNode in startObjectsList)
         {
-            int xPosition = Random.Range(tileMapBorder[0], tileMapBorder[1] + 1);
-            int yPosition = Random.Range(tileMapBorder[2], tileMapBorder[3] + 1);
+            int randomIndex = Random.Range(0, availablePositions.Count);
 
-            TryInstantiateNewObjectInMap(blockNode, temperature, pollution, radiation, new Vector2(xPosition, yPosition));
+            Vector2 position = availablePositions[randomIndex];
+
+            availablePositions.RemoveAt(randomIndex);
+
+            TryInstantiateNewObjectInMap(blockNode, temperature, pollution, radiation, position);
         }
     }
     private void TryInstantiateNewObjectInMap(BlockNodeSO blockNode, float temperature, float pollution, float radiation, Vector2 position)
@@ -58,7 +70,7 @@ public class MapObjectManager : MonoBehaviour
         if (blockNode.startBlockNode.GetSpawnChance(temperature, pollution, radiation) > randomSpawnChance)
         {
             GameObject newGameObject = Instantiate(blockNode.startBlockNode.startBlockPrefab, spawnedObjectsParent);
-            newGameObject.transform.position = position;
+            newGameObject.transform.localPosition = position;
             currentMapObjectList.Add(newGameObject);
         }
     }

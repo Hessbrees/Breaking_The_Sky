@@ -692,6 +692,7 @@ MonoBehaviour:
   blockNodeGraphList:
   - {fileID: 11400000, guid: c2d37f4daf3037f47859204cbf594908, type: 2}
   spawnedObjectsParent: {fileID: 1798290844}
+  availablePositions: []
 --- !u!4 &1798290844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8817321011701626608, guid: b8aa8997996fc1b4bb456d1c57a039d0, type: 3}
@@ -971,6 +972,14 @@ PrefabInstance:
     - target: {fileID: 4185196291022455471, guid: b8aa8997996fc1b4bb456d1c57a039d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817321011701626608, guid: b8aa8997996fc1b4bb456d1c57a039d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817321011701626608, guid: b8aa8997996fc1b4bb456d1c57a039d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8aa8997996fc1b4bb456d1c57a039d0, type: 3}

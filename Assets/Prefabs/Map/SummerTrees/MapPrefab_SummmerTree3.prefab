@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4277053412750449074, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4277053412750449074, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
       propertyPath: m_RootOrder
@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4277053412750449074, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.44
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4277053412750449074, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.44
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4277053412750449074, guid: dc16c6df87790524f9810150bb8c6fb4, type: 3}
       propertyPath: m_LocalPosition.x

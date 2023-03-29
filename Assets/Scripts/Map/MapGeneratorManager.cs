@@ -29,6 +29,8 @@ public class MapGeneratorManager : MonoBehaviour
     {
         mapObjectManager = GetComponent<MapObjectManager>();
         randomizer = new Randomizer(tileMapBorder[0], tileMapBorder[1], tileMapBorder[2], tileMapBorder[3]);
+
+        mapObjectManager.FillAvailablePositionList(tileMapBorder);
     }
 
     private void OnEnable()
@@ -50,7 +52,7 @@ public class MapGeneratorManager : MonoBehaviour
 
         UpdateBackground();
 
-        mapObjectManager.UpdateObjectInMap(factorsManager.currentTemperature,factorsManager.currentPolution,factorsManager.currentRadiation,tileMapBorder);
+        mapObjectManager.UpdateObjectInMap(factorsManager.currentTemperature,factorsManager.currentPolution,factorsManager.currentRadiation);
 
     }
     #region Background

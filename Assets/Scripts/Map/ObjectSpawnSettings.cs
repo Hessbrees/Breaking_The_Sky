@@ -7,4 +7,5 @@ public class ObjectSpawnSettings : MonoBehaviour
     [HideInInspector] public int objectID;
     [HideInInspector] public int blockNodeGraphID;
     [HideInInspector] public int pointsToChangePrefab;
+    [HideInInspector] public Vector2 spawnPosition;
 }

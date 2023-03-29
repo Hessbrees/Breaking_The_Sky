@@ -38,11 +38,11 @@ public class BlockNodeSO : ScriptableObject
     private const float startNodeWidth = 250f;
     private const float startNodeHeight = 450f;
     private const float connectNodeWidth = 250f;
-    private const float connectNodeHeight = 350f;
+    private const float connectNodeHeight = 400f;
     private const float stepNodeWidth = 250f;
     private const float stepNodeHeight = 150f;
     private const float BlockNodeSelectionHeight = 15f;
-    private const float BlockNodeSelectionWidth = 120f;
+
     /// <summary>
     /// Initialise node
     /// </summary>
@@ -357,7 +357,7 @@ public class BlockNodeSO : ScriptableObject
             return false;
 
         // If the child node already has a parent return false
-        if (blockNodeGraph.GetBlockNode(childID).parentBlockNodeIDList.Count > 0 && !blockNodeGraph.GetBlockNode(childID).blockNodeType.isEndBlock)
+        if (blockNodeGraph.GetBlockNode(childID).parentBlockNodeIDList.Count > 0 && !blockNodeGraph.GetBlockNode(childID).blockNodeType.isConnectBlock && !blockNodeGraph.GetBlockNode(childID).blockNodeType.isEndBlock)
             return false;
 
         // If child is a connect block and this node is a connect block return false

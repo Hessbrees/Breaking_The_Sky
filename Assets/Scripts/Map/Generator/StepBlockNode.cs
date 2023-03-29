@@ -26,6 +26,10 @@ public class StepBlockNode
             {
                 EditorGUI.DrawPreviewTexture(new Rect(160, 25, 60, 60), image.mainTexture);
             }
+            else if (stepBlockPrefab.TryGetComponent(out SpriteRenderer sprite))
+            {
+                EditorGUI.DrawPreviewTexture(new Rect(160, 25, 60, 60), sprite.sprite.texture);
+            }
         }
 
     }

@@ -25,6 +25,10 @@ public class StartBlockNode
     }
     private float factorProbalibityCalculation(float minValue, float maxValue, float currentValue)
     {
+        if (minValue == maxValue && currentValue == minValue) return 1f;
+
+        if (minValue == maxValue && currentValue != minValue) return 0;
+
         // find value between current value and middle value 
         float currentPoints = MathF.Abs((maxValue + minValue) / 2 - MathF.Abs(currentValue));
 
@@ -49,6 +53,10 @@ public class StartBlockNode
             if(startBlockPrefab.TryGetComponent(out Image image))
             {
                 EditorGUI.DrawPreviewTexture(new Rect(160, 25, 60, 60),image.mainTexture);
+            }
+            else if(startBlockPrefab.TryGetComponent(out SpriteRenderer sprite))
+            {
+                EditorGUI.DrawPreviewTexture(new Rect(160, 25, 60, 60), sprite.sprite.texture);
             }
         }
 

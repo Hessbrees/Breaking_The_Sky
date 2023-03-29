@@ -4,10 +4,9 @@ using UnityEngine;
 [Serializable]
 public class ConnectBlockNode
 {
-
     // Minimal points needed to change state to step block
     // Get one every tick when factors are in requirements range
-    public float connectBlockPoints;
+    public int connectBlockPoints;
 
     // Factors setting needed to change state
     public float minTemperature;
@@ -34,6 +33,9 @@ public class ConnectBlockNode
     public void DrawConnectBlock()
     {
         EditorGUILayout.Space(30);
+
+        EditorGUILayout.LabelField("Requirements tick to change: ");
+        connectBlockPoints = EditorGUILayout.IntField(connectBlockPoints);
 
         EditorGUILayout.LabelField("Temperature spawn factor: ");
         minTemperature = EditorGUILayout.Slider(minTemperature, 0, maxTemperature);

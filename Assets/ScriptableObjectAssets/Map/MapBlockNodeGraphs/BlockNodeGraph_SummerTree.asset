@@ -79,13 +79,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 10
-    minTemperature: 0
-    maxTemperature: 100
-    minPolution: 40
-    maxPolution: 60
-    minRadiation: 0
-    maxRadiation: 100
+    connectBlockPoints: 5
+    minTemperature: 15
+    maxTemperature: 40
+    minPolution: 15
+    maxPolution: 40
+    minRadiation: 15
+    maxRadiation: 40
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -190,12 +190,12 @@ MonoBehaviour:
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
     connectBlockPoints: 5
-    minTemperature: 0
-    maxTemperature: 100
-    minPolution: 0
-    maxPolution: 100
-    minRadiation: 0
-    maxRadiation: 100
+    minTemperature: 15
+    maxTemperature: 40
+    minPolution: 15
+    maxPolution: 40
+    minRadiation: 15
+    maxRadiation: 40
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:

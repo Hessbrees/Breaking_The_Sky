@@ -9,6 +9,9 @@ public static class Settings
     public const float secondsPerGameInterval = 1f;
     // minutes in game time interval
     public const int timeInterval = 5;
+
+
+    // check if value is in range
     public static bool CheckValueInRange(float value,float minValue, float maxValue)
     {
         if(value >= minValue && value <= maxValue)
@@ -16,4 +19,7 @@ public static class Settings
         
         return false;
     }
+
+
 }
+

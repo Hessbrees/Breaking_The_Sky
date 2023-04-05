@@ -16,11 +16,11 @@ public class ConnectBlockNode
     public float minRadiation;
     public float maxRadiation;
 
-    public bool IsFactorsRequirementsAreMet(float currentTemperature, float currentPolution, float currentRadiation)
+    public bool IsFactorsRequirementsAreMet(Factors factors)
     {
-        if (Settings.CheckValueInRange(currentTemperature, minTemperature, maxTemperature) &&
-        Settings.CheckValueInRange(currentPolution, minPolution, maxPolution) &&
-        Settings.CheckValueInRange(currentRadiation, minRadiation, maxRadiation))
+        if (Settings.CheckValueInRange(factors.temperature, minTemperature, maxTemperature) &&
+        Settings.CheckValueInRange(factors.polution, minPolution, maxPolution) &&
+        Settings.CheckValueInRange(factors.radiation, minRadiation, maxRadiation))
         {
             return true;
         }

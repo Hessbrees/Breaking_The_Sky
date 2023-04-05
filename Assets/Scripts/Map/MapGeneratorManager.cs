@@ -52,7 +52,7 @@ public class MapGeneratorManager : MonoBehaviour
 
         UpdateBackground();
 
-        mapObjectManager.UpdateObjectInMap(factorsManager.currentTemperature,factorsManager.currentPolution,factorsManager.currentRadiation);
+        mapObjectManager.UpdateObjectInMap(factorsManager.currentFactors);
 
     }
     #region Background
@@ -62,11 +62,11 @@ public class MapGeneratorManager : MonoBehaviour
         {
             Tile newTile;
 
-            if (factorsManager.currentPolution > 20)
+            if (factorsManager.currentFactors.polution > 20)
             {
                 newTile = backgroundTileset[1];
             }
-            else if (factorsManager.currentTemperature > 40)
+            else if (factorsManager.currentFactors.temperature > 40)
             {
                 newTile = backgroundTileset[2];
             }

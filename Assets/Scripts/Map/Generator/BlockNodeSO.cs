@@ -16,7 +16,7 @@ public class BlockNodeSO : ScriptableObject
     [HideInInspector] public BlockNodeGraphSO blockNodeGraph;
     public BlockNodeTypeSO blockNodeType;
     [HideInInspector] public BlockNodeTypeListSO blockNodeTypeList;
-    [HideInInspector] public ConnectBlockNode connectBlockNode;
+    public ConnectBlockNode connectBlockNode;
     [HideInInspector] public StepBlockNode stepBlockNode;
     [HideInInspector] public StartBlockNode startBlockNode;
 

@@ -16,12 +16,12 @@ public class StartBlockNode
     public float maxRadiation;
     public GameObject startBlockPrefab;
 
-    public float GetSpawnChance(float currentTemperature, float currentPolution, float currentRadiation)
+    public float GetSpawnChance(Factors factors)
     {
         return baseFactor / 288 *
-            factorProbalibityCalculation(minTemperature, maxTemperature, currentTemperature) *
-            factorProbalibityCalculation(minPolution, maxPolution, currentPolution) *
-            factorProbalibityCalculation(minRadiation, maxRadiation, currentRadiation);
+            factorProbalibityCalculation(minTemperature, maxTemperature, factors.temperature) *
+            factorProbalibityCalculation(minPolution, maxPolution, factors.polution) *
+            factorProbalibityCalculation(minRadiation, maxRadiation, factors.radiation);
     }
     private float factorProbalibityCalculation(float minValue, float maxValue, float currentValue)
     {

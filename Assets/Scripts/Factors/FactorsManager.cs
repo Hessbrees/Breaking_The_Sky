@@ -1,11 +1,17 @@
 
+using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 public class FactorsManager : MonoBehaviour
 {
-    public float currentTemperature;
-    public float currentPolution;
-    public float currentRadiation;
+    public Factors currentFactors;
+}
 
+[Serializable]
+public struct Factors
+{
+    public float temperature;
+    public float polution;
+    public float radiation;
 }

@@ -48,31 +48,37 @@ public class MapObjectManager : MonoBehaviour
             }
     }
 
-    public void UpdateObjectInMap(float temperature, float pollution, float radiation)
+    public void UpdateObjectInMap(Factors factors)
     {
         if(availablePositions.Count == 0) return;
 
         foreach (var blockNode in startObjectsList)
         {
+            // get random position from list
             int randomIndex = Random.Range(0, availablePositions.Count);
 
             Vector2 position = availablePositions[randomIndex];
-
-            availablePositions.RemoveAt(randomIndex);
-
-            TryInstantiateNewObjectInMap(blockNode, temperature, pollution, radiation, position);
+             
+            // remove available position from list if object is instantiated succefully
+            if(TryInstantiateNewObjectInMap(blockNode, factors, position))
+                availablePositions.RemoveAt(randomIndex);
+            
         }
     }
-    private void TryInstantiateNewObjectInMap(BlockNodeSO blockNode, float temperature, float pollution, float radiation, Vector2 position)
+    private bool TryInstantiateNewObjectInMap(BlockNodeSO blockNode, Factors factors, Vector2 position)
     {
         int randomSpawnChance = Random.Range(0, 1);
 
-        if (blockNode.startBlockNode.GetSpawnChance(temperature, pollution, radiation) > randomSpawnChance)
+        if (blockNode.startBlockNode.GetSpawnChance(factors) > randomSpawnChance)
         {
             GameObject newGameObject = Instantiate(blockNode.startBlockNode.startBlockPrefab, spawnedObjectsParent);
             newGameObject.transform.localPosition = position;
             currentMapObjectList.Add(newGameObject);
+            
+            return true;
         }
+
+        return false;
     }
 
 }

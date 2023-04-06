@@ -41,20 +41,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 4414790705719074528, guid: 6c0e88635fb633746bf56047289e43ed, type: 3}
   rect:
     serializedVersion: 2
-    x: 319
+    x: 239
     y: 505
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 339
+    x: 259
     y: 515
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-5865503213258614549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,20 +99,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 840
+    x: 760
     y: 551
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 860
+    x: 780
     y: 561
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-3943904927541522448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,13 +134,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 5
-    minTemperature: 0
-    maxTemperature: 0
-    minPolution: 0
-    maxPolution: 0
-    minRadiation: 0
-    maxRadiation: 0
+    connectBlockPoints: 2
+    minTemperature: 8.7
+    maxTemperature: 51.1
+    minPolution: 6.6
+    maxPolution: 42.2
+    minRadiation: 11.9
+    maxRadiation: 59.3
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -154,20 +154,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 847
+    x: 767
     y: 92
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 867
+    x: 787
     y: 102
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-3883226702397206364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,20 +209,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 318
+    x: 238
     y: 80
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 338
+    x: 258
     y: 90
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-1054652134614008763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,20 +265,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 583
+    x: 503
     y: 212
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 603
+    x: 523
     y: 222
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,13 +325,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 10
-    minTemperature: 0
-    maxTemperature: 0
-    minPolution: 0
-    maxPolution: 0
-    minRadiation: 0
-    maxRadiation: 0
+    connectBlockPoints: 2
+    minTemperature: 6.9
+    maxTemperature: 44.7
+    minPolution: 6.8
+    maxPolution: 54.1
+    minRadiation: 5.7
+    maxRadiation: 59.3
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -345,20 +345,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 1394
+    x: 1314
     y: 110
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1414
+    x: 1334
     y: 120
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &2316238556569291774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,20 +401,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 1124
+    x: 1044
     y: 216
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1144
+    x: 1064
     y: 226
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &5319971022164482374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,20 +456,20 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 1666
+    x: 1586
     y: 209
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1686
+    x: 1606
     y: 219
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &8912853786579608998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,17 +510,17 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 1174
+    x: 1094
     y: 708
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1194
+    x: 1114
     y: 718
     width: 120
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1

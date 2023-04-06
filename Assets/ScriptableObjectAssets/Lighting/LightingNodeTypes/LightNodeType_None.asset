@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e9a92911ee14a4d9c54c6952c7cea5, type: 3}
-  m_Name: lightingSchedule_
+  m_Script: {fileID: 11500000, guid: 4bbf768315f27d04aaa0b1aa152ee372, type: 3}
+  m_Name: LightNodeType_None
   m_EditorClassIdentifier: 
-  lightingBrightnessesArray: []
+  lightNodeTypeName: None
+  displayInBlockGraphEditor: 1
+  isStartBlock: 0
+  isStepBlock: 0
+  isEndBlock: 0
+  isNone: 1

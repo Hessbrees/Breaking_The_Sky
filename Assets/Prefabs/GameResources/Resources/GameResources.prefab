@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}

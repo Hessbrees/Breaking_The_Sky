@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5770852918342484909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 70c254e5-73b1-4778-bc22-4d56a3c2317a
+  parentLightNodeIDList: []
+  childLightNodeIDList: []
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 300
+    y: 197
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 320
+    y: 207
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 1
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce50850c1012b0e47bffb0a7431f7ddf, type: 3}
+  m_Name: LightNodeGraph_2
+  m_EditorClassIdentifier: 
+  lightNodeListSO: {fileID: 0}
+  lightNodeList:
+  - {fileID: -5770852918342484909}
+  - {fileID: 7489459037890064283}
+  lightNodeToDrawLineFrom: {fileID: 0}
+  linePosition: {x: 0, y: 0}
+--- !u!114 &7489459037890064283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: e6b1efac-1363-4df6-ae3b-dec8aa39e190
+  parentLightNodeIDList: []
+  childLightNodeIDList: []
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 696
+    y: 199
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 716
+    y: 209
+    width: 210
+    height: 15
+  isLeftClickDragging: 1
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0

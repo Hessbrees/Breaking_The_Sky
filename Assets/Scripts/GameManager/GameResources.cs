@@ -17,6 +17,8 @@ public class GameResources : MonoBehaviour
             return instance;
         }
     }
-
+    
     public BlockNodeTypeListSO blockNodeTypeList;
+    public LightNodeTypeListSO lightNodeTypeList;
+    
 }

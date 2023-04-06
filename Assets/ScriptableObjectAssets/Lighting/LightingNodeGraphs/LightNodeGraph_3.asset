@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2497742979834797348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 0b2efdc0-2213-4c4d-870e-2a15e941ea9d
+  parentLightNodeIDList: []
+  childLightNodeIDList: []
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 470
+    y: 225
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 490
+    y: 235
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 1
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,6 +47,7 @@ MonoBehaviour:
   m_Name: LightNodeGraph_3
   m_EditorClassIdentifier: 
   lightNodeListSO: {fileID: 0}
-  lightNodeList: []
+  lightNodeList:
+  - {fileID: -2497742979834797348}
   lightNodeToDrawLineFrom: {fileID: 0}
   linePosition: {x: 0, y: 0}

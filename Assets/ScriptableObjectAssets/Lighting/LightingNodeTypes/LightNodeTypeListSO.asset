@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightNodeTypeListSO
   m_EditorClassIdentifier: 
   list:
-  - {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
-  - {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
   - {fileID: 11400000, guid: 239aec0cf0d465a4cb6603d8c1eac948, type: 2}
   - {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
+  - {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
+  - {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}

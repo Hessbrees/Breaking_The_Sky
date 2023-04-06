@@ -31,7 +31,7 @@ public class LightNodeSO : ScriptableObject
 
     // Start Node layout values
     private const float nodeWidth = 250f;
-    private const float nodeHeight = 450f;
+    private const float nodeHeight = 250f;
 
     private const float lightNodeSelectionHeight = 15f;
 
@@ -76,9 +76,8 @@ public class LightNodeSO : ScriptableObject
         EditorGUI.BeginChangeCheck();
 
         // if the light node has a parent or is of type start then display a label else display a popup
-        if (parentLightNodeIDList.Count > 0 || lightNodeType.isStartBlock)
+        if (parentLightNodeIDList.Count > 0 || lightNodeType.isStartBlock || lightNodeType.isEndBlock)
         {
-
             EditorGUILayout.LabelField(lightNodeType.lightNodeTypeName, titleStyle);
         }
         else
@@ -91,7 +90,13 @@ public class LightNodeSO : ScriptableObject
             lightNodeType = lightNodeTypeList.list[selection];
         }
 
-        CreateLightNode();
+
+        if (lightNode == null)
+        {
+            CreateLightNode();
+        }
+
+        lightNode.DrawLightNode();
 
         if (EditorGUI.EndChangeCheck())
             EditorUtility.SetDirty(this);
@@ -293,8 +298,12 @@ public class LightNodeSO : ScriptableObject
         if (parentLightNodeIDList.Contains(childID))
             return false;
 
-        // If the child light is an start light node return false - the start light must always be the top level parent node
+        // If the child light node is an start light node return false - the start light must always be the top level parent node
         if (lightNodeGraph.GetLightNode(childID).lightNodeType.isStartBlock && !lightNodeType.isEndBlock)
+            return false;
+
+        // If the parent light node is an end light node and child is not start node return false
+        if (lightNodeType.isEndBlock && !lightNodeGraph.GetLightNode(childID).lightNodeType.isStartBlock)
             return false;
 
         return true;

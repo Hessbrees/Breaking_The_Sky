@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class LightNodeGraphEditor : EditorWindow
 {
@@ -302,8 +303,21 @@ public class LightNodeGraphEditor : EditorWindow
         // If current node graph empty then add entrance light node first
         if (currentLightNodeGraph.lightNodeList.Count == 0)
         {
-           CreateLightNode(new Vector2(200f, 200f), lightNodeTypeList.list.Find(x => x.isStartBlock));
-           CreateLightNode(new Vector2(400f, 200f), lightNodeTypeList.list.Find(x => x.isEndBlock));
+            CreateLightNode(new Vector2(200f, 200f), lightNodeTypeList.list.Find(x => x.isStartBlock));
+
+            CreateLightNode(new Vector2(1000f, 200f), lightNodeTypeList.list.Find(x => x.isEndBlock));
+
+            LightNodeSO startBlock = null;
+            LightNodeSO endBlock = null;
+
+            foreach (var lightNode in currentLightNodeGraph.lightNodeList)
+            {
+                if(lightNode.lightNodeType.isStartBlock) startBlock = lightNode;
+                
+                if(lightNode.lightNodeType.isEndBlock) endBlock = lightNode;
+            }
+
+            CreateConnectionLineToStartNode(startBlock,endBlock);
         }
 
         CreateLightNode(mousePositionObject, lightNodeTypeList.list.Find(x => x.isNone));
@@ -331,6 +345,12 @@ public class LightNodeGraphEditor : EditorWindow
         // Refresh graph node dictionary
         currentLightNodeGraph.OnValidate();
 
+    }
+    private void CreateConnectionLineToStartNode(LightNodeSO childLightNode, LightNodeSO parentLightNode)
+    {
+        parentLightNode.AddChildLightNodeIDToLightNode(childLightNode.id);
+
+        childLightNode.AddParentLightNodeIDToLightNode(parentLightNode.id);
     }
 
     /// <summary>
@@ -404,7 +424,7 @@ public class LightNodeGraphEditor : EditorWindow
         // Iterate through all light nodes
         foreach (LightNodeSO lightNode in currentLightNodeGraph.lightNodeList)
         {
-            if (lightNode.isSelected && lightNode.childLightNodeIDList.Count > 0 && !lightNode.lightNodeType.isStartBlock && !lightNode.lightNodeType.isEndBlock)
+            if (lightNode.isSelected && lightNode.childLightNodeIDList.Count > 0)
             {
                 for (int i = lightNode.childLightNodeIDList.Count - 1; i >= 0; i--)
                 {

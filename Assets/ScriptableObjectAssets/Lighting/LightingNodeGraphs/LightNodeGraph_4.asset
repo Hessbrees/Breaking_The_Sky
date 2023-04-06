@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6455961032455104957
+--- !u!114 &-5519654341756805764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
   m_Name: LightNode
   m_EditorClassIdentifier: 
-  id: 0838dae4-a7b7-44c5-822f-1b0c737def32
+  id: af71c113-9599-48a7-92c9-859fc77ad52a
   parentLightNodeIDList: []
-  childLightNodeIDList: []
+  childLightNodeIDList:
+  - 2bee3951-9a10-4f3a-945f-01afb6fe4925
   lightNodeGraph: {fileID: 11400000}
-  lightNodeType: {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
+  lightNodeType: {fileID: 11400000, guid: 239aec0cf0d465a4cb6603d8c1eac948, type: 2}
   lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
   rect:
     serializedVersion: 2
-    x: 766
-    y: 199
+    x: 1000
+    y: 200
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 786
-    y: 209
+    x: 1020
+    y: 210
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 1
-  isNodesSelectionBlocked: 1
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,16 +45,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce50850c1012b0e47bffb0a7431f7ddf, type: 3}
-  m_Name: LightNodeGraph_1
+  m_Name: LightNodeGraph_4
   m_EditorClassIdentifier: 
   lightNodeListSO: {fileID: 0}
   lightNodeList:
-  - {fileID: 8431907795928792821}
-  - {fileID: 6818522903780369350}
-  - {fileID: -6455961032455104957}
+  - {fileID: 2220724338490866040}
+  - {fileID: -5519654341756805764}
+  - {fileID: 775766458154386902}
   lightNodeToDrawLineFrom: {fileID: 0}
   linePosition: {x: 0, y: 0}
---- !u!114 &6818522903780369350
+--- !u!114 &775766458154386902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,29 +66,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
   m_Name: LightNode
   m_EditorClassIdentifier: 
-  id: 8540886e-f3e1-4cf3-8339-bc39ec66c0ef
+  id: d2a2d963-79d9-417e-ad3a-28afe99015ee
   parentLightNodeIDList: []
   childLightNodeIDList: []
   lightNodeGraph: {fileID: 11400000}
-  lightNodeType: {fileID: 11400000, guid: 239aec0cf0d465a4cb6603d8c1eac948, type: 2}
+  lightNodeType: {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
   lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
   rect:
     serializedVersion: 2
-    x: 1166
-    y: 192
+    x: 880
+    y: 408
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1186
-    y: 202
+    x: 900
+    y: 418
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 1
-  isNodesSelectionBlocked: 1
---- !u!114 &8431907795928792821
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &2220724338490866040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,8 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
   m_Name: LightNode
   m_EditorClassIdentifier: 
-  id: c97ea373-e7aa-4f66-a4b5-1b7efd65a7fd
-  parentLightNodeIDList: []
+  id: 2bee3951-9a10-4f3a-945f-01afb6fe4925
+  parentLightNodeIDList:
+  - af71c113-9599-48a7-92c9-859fc77ad52a
   childLightNodeIDList: []
   lightNodeGraph: {fileID: 11400000}
   lightNodeType: {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
@@ -119,5 +121,5 @@ MonoBehaviour:
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 1
-  isNodesSelectionBlocked: 1
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0

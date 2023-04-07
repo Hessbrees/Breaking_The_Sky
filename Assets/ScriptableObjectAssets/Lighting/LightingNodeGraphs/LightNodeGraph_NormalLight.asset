@@ -1,0 +1,959 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8924395659550788942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: eba6f468-c78a-4657-ab61-23f461bef849
+  parentLightNodeIDList:
+  - 3921cdf2-c724-4b13-84cb-1034d0c33e85
+  childLightNodeIDList:
+  - d73995f9-0ceb-4cf3-b817-a3cc4f6b863c
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 19
+      minute: 0
+      lightIntensity: 0.5
+      color:
+        serializedVersion: 2
+        rgba: 4294967021
+  rect:
+    serializedVersion: 2
+    x: 1166
+    y: 699
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1186
+    y: 709
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-8079446183272689566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 1afc4d52-c87a-427f-8949-f34018937b8f
+  parentLightNodeIDList: []
+  childLightNodeIDList:
+  - d2ed0783-d4d7-4f59-827e-5b88e152b4d8
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 239aec0cf0d465a4cb6603d8c1eac948, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 23
+      minute: 59
+      lightIntensity: 0.2
+      color:
+        serializedVersion: 2
+        rgba: 4294967295
+  rect:
+    serializedVersion: 2
+    x: -249
+    y: 698
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: -229
+    y: 708
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-7587803684353261902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 0e0d1762-fe5a-4cb4-9e13-708c6236a62b
+  parentLightNodeIDList:
+  - 8b11ee37-d6ca-4ccd-9da5-a41e2dd59658
+  childLightNodeIDList:
+  - fc2a93fc-b3d8-45bc-becd-681493fbf38b
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 17
+      minute: 0
+      lightIntensity: 0.7
+      color:
+        serializedVersion: 2
+        rgba: 4294960805
+  rect:
+    serializedVersion: 2
+    x: 64
+    y: 699
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 84
+    y: 709
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-7351866678675944582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 3921cdf2-c724-4b13-84cb-1034d0c33e85
+  parentLightNodeIDList:
+  - 1793fd87-172e-4a42-8b88-f30efa18f376
+  childLightNodeIDList:
+  - eba6f468-c78a-4657-ab61-23f461bef849
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 18
+      minute: 30
+      lightIntensity: 0.55
+      color:
+        serializedVersion: 2
+        rgba: 4294960805
+  rect:
+    serializedVersion: 2
+    x: 880
+    y: 699
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 900
+    y: 709
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-7221848198052742418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 7b4c2ac2-6ed3-486b-9a80-9290908a0510
+  parentLightNodeIDList:
+  - d2ed0783-d4d7-4f59-827e-5b88e152b4d8
+  childLightNodeIDList:
+  - aa169e21-c99b-4df9-91c1-f62e6e18c0c6
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 5
+      minute: 30
+      lightIntensity: 0.2
+      color:
+        serializedVersion: 2
+        rgba: 4284572159
+  rect:
+    serializedVersion: 2
+    x: 57
+    y: -7
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 77
+    y: 3
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-7162284582486656065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: d2ed0783-d4d7-4f59-827e-5b88e152b4d8
+  parentLightNodeIDList:
+  - 1afc4d52-c87a-427f-8949-f34018937b8f
+  childLightNodeIDList:
+  - 7b4c2ac2-6ed3-486b-9a80-9290908a0510
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 3ef9dfc5f9315024a879c639a3263640, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 0
+      minute: 0
+      lightIntensity: 0.2
+      color:
+        serializedVersion: 2
+        rgba: 4294967295
+  rect:
+    serializedVersion: 2
+    x: -245
+    y: -6
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: -225
+    y: 4
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-6568129270480216879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 0af76a6b-a0ee-40ab-950c-b753bec1caa8
+  parentLightNodeIDList:
+  - adfc6a74-d441-4552-939d-f8b8409c77d8
+  childLightNodeIDList:
+  - 3a750503-6eae-44fc-bfa0-d728b652d830
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 20
+      lightIntensity: 1.3
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 1131
+    y: 326
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1151
+    y: 336
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-3332137747636511927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: aa169e21-c99b-4df9-91c1-f62e6e18c0c6
+  parentLightNodeIDList:
+  - 7b4c2ac2-6ed3-486b-9a80-9290908a0510
+  childLightNodeIDList:
+  - b7b5fa48-4e0f-4624-a2a1-c998cbcd73da
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 6
+      minute: 30
+      lightIntensity: 0.3
+      color:
+        serializedVersion: 2
+        rgba: 4286348543
+  rect:
+    serializedVersion: 2
+    x: 322
+    y: -5
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 342
+    y: 5
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-2687793014156846987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 3a750503-6eae-44fc-bfa0-d728b652d830
+  parentLightNodeIDList:
+  - 0af76a6b-a0ee-40ab-950c-b753bec1caa8
+  childLightNodeIDList:
+  - 8b11ee37-d6ca-4ccd-9da5-a41e2dd59658
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 25
+      lightIntensity: 1
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 1378
+    y: 326
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1398
+    y: 336
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-1657404263587470500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: dff843ad-d7b8-45cd-b9da-c99b8caf74ba
+  parentLightNodeIDList: []
+  childLightNodeIDList: []
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 0
+      minute: 0
+      lightIntensity: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294967295
+  rect:
+    serializedVersion: 2
+    x: 1748
+    y: 733
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1768
+    y: 743
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-1568383285255317892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 1bbb2f9a-9e75-4d12-ab1b-24a442fce726
+  parentLightNodeIDList:
+  - 79688b3c-504e-4dd7-96eb-22626f34bdf4
+  childLightNodeIDList:
+  - b3f86aa9-6d69-40f0-9b4f-f71126ef962f
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 0
+      lightIntensity: 0.8
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 59
+    y: 332
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 79
+    y: 342
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &-955342953043544907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: b7b5fa48-4e0f-4624-a2a1-c998cbcd73da
+  parentLightNodeIDList:
+  - aa169e21-c99b-4df9-91c1-f62e6e18c0c6
+  childLightNodeIDList:
+  - bbcc2c35-2c8e-41fc-8e88-bf1792fd90ae
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 7
+      minute: 30
+      lightIntensity: 0.4
+      color:
+        serializedVersion: 2
+        rgba: 4285831667
+  rect:
+    serializedVersion: 2
+    x: 595
+    y: -7
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 615
+    y: 3
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce50850c1012b0e47bffb0a7431f7ddf, type: 3}
+  m_Name: LightNodeGraph_NormalLight
+  m_EditorClassIdentifier: 
+  lightNodeListSO: {fileID: 0}
+  lightNodeList:
+  - {fileID: -7162284582486656065}
+  - {fileID: -8079446183272689566}
+  - {fileID: -3332137747636511927}
+  - {fileID: -955342953043544907}
+  - {fileID: -7221848198052742418}
+  - {fileID: 127582987828054230}
+  - {fileID: 1969503355632181770}
+  - {fileID: -1568383285255317892}
+  - {fileID: 3723551376446456647}
+  - {fileID: 260224940999592938}
+  - {fileID: 4408663594826230959}
+  - {fileID: -6568129270480216879}
+  - {fileID: -2687793014156846987}
+  - {fileID: 1662164415633934296}
+  - {fileID: -7587803684353261902}
+  - {fileID: 1759443200144073639}
+  - {fileID: 6715145693728553240}
+  - {fileID: -7351866678675944582}
+  - {fileID: -8924395659550788942}
+  - {fileID: 705725305770672097}
+  - {fileID: -1657404263587470500}
+  lightNodeToDrawLineFrom: {fileID: 0}
+  linePosition: {x: 0, y: 0}
+--- !u!114 &127582987828054230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: bbcc2c35-2c8e-41fc-8e88-bf1792fd90ae
+  parentLightNodeIDList:
+  - b7b5fa48-4e0f-4624-a2a1-c998cbcd73da
+  childLightNodeIDList:
+  - 79688b3c-504e-4dd7-96eb-22626f34bdf4
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 8
+      minute: 30
+      lightIntensity: 0.5
+      color:
+        serializedVersion: 2
+        rgba: 4285837043
+  rect:
+    serializedVersion: 2
+    x: 863
+    y: -7
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 883
+    y: 3
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &260224940999592938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 88f87344-bfb0-471e-8cc7-a4d907a8909f
+  parentLightNodeIDList:
+  - b3f86aa9-6d69-40f0-9b4f-f71126ef962f
+  childLightNodeIDList:
+  - adfc6a74-d441-4552-939d-f8b8409c77d8
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 10
+      lightIntensity: 1
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 598
+    y: 326
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 618
+    y: 336
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &705725305770672097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: d73995f9-0ceb-4cf3-b817-a3cc4f6b863c
+  parentLightNodeIDList:
+  - eba6f468-c78a-4657-ab61-23f461bef849
+  childLightNodeIDList: []
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 20
+      minute: 0
+      lightIntensity: 0.4
+      color:
+        serializedVersion: 2
+        rgba: 4294967295
+  rect:
+    serializedVersion: 2
+    x: 1458
+    y: 707
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1478
+    y: 717
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &1662164415633934296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 8b11ee37-d6ca-4ccd-9da5-a41e2dd59658
+  parentLightNodeIDList:
+  - 3a750503-6eae-44fc-bfa0-d728b652d830
+  childLightNodeIDList:
+  - 0e0d1762-fe5a-4cb4-9e13-708c6236a62b
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 35
+      lightIntensity: 0.8
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 1634
+    y: 326
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1654
+    y: 336
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &1759443200144073639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: fc2a93fc-b3d8-45bc-becd-681493fbf38b
+  parentLightNodeIDList:
+  - 0e0d1762-fe5a-4cb4-9e13-708c6236a62b
+  childLightNodeIDList:
+  - 1793fd87-172e-4a42-8b88-f30efa18f376
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 17
+      minute: 30
+      lightIntensity: 0.65
+      color:
+        serializedVersion: 2
+        rgba: 4294960805
+  rect:
+    serializedVersion: 2
+    x: 343
+    y: 698
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 363
+    y: 708
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &1969503355632181770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 79688b3c-504e-4dd7-96eb-22626f34bdf4
+  parentLightNodeIDList:
+  - bbcc2c35-2c8e-41fc-8e88-bf1792fd90ae
+  childLightNodeIDList:
+  - 1bbb2f9a-9e75-4d12-ab1b-24a442fce726
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 9
+      minute: 30
+      lightIntensity: 0.6
+      color:
+        serializedVersion: 2
+        rgba: 4285854701
+  rect:
+    serializedVersion: 2
+    x: 1130
+    y: -7
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 1150
+    y: 3
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &3723551376446456647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: b3f86aa9-6d69-40f0-9b4f-f71126ef962f
+  parentLightNodeIDList:
+  - 1bbb2f9a-9e75-4d12-ab1b-24a442fce726
+  childLightNodeIDList:
+  - 88f87344-bfb0-471e-8cc7-a4d907a8909f
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 5
+      lightIntensity: 0.9
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 323
+    y: 332
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 343
+    y: 342
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &4408663594826230959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: adfc6a74-d441-4552-939d-f8b8409c77d8
+  parentLightNodeIDList:
+  - 88f87344-bfb0-471e-8cc7-a4d907a8909f
+  childLightNodeIDList:
+  - 0af76a6b-a0ee-40ab-950c-b753bec1caa8
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 14
+      minute: 15
+      lightIntensity: 1.2
+      color:
+        serializedVersion: 2
+        rgba: 4287299572
+  rect:
+    serializedVersion: 2
+    x: 869
+    y: 325
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 889
+    y: 335
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0
+--- !u!114 &6715145693728553240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1ade8c08cf5b343aec09d002f7f046, type: 3}
+  m_Name: LightNode
+  m_EditorClassIdentifier: 
+  id: 1793fd87-172e-4a42-8b88-f30efa18f376
+  parentLightNodeIDList:
+  - fc2a93fc-b3d8-45bc-becd-681493fbf38b
+  childLightNodeIDList:
+  - 3921cdf2-c724-4b13-84cb-1034d0c33e85
+  lightNodeGraph: {fileID: 11400000}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
+  lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
+  lightNode:
+    lightingBrightness:
+      hour: 18
+      minute: 0
+      lightIntensity: 0.6
+      color:
+        serializedVersion: 2
+        rgba: 4294634176
+  rect:
+    serializedVersion: 2
+    x: 606
+    y: 696
+    width: 160
+    height: 75
+  selectableRect:
+    serializedVersion: 2
+    x: 626
+    y: 706
+    width: 210
+    height: 15
+  isLeftClickDragging: 0
+  isSelected: 0
+  isNodesPositionBlocked: 0
+  isNodesSelectionBlocked: 0

@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.Experimental.GlobalIllumination;
-using DG.Tweening;
 
 [CreateAssetMenu(fileName = "LightNode_", menuName = "Scriptable Objects/Lighting/Light Node")]
 public class LightNodeSO : ScriptableObject
@@ -12,7 +10,7 @@ public class LightNodeSO : ScriptableObject
     [HideInInspector] public List<string> parentLightNodeIDList = new List<string>();
     [HideInInspector] public List<string> childLightNodeIDList = new List<string>();
     [HideInInspector] public LightNodeGraphSO lightNodeGraph;
-    public LightNodeTypeSO lightNodeType;
+    [HideInInspector] public LightNodeTypeSO lightNodeType;
     [HideInInspector] public LightNodeTypeListSO lightNodeTypeList;
     [HideInInspector] public LightNode lightNode;
 
@@ -31,7 +29,7 @@ public class LightNodeSO : ScriptableObject
 
     // Start Node layout values
     private const float nodeWidth = 250f;
-    private const float nodeHeight = 250f;
+    private const float nodeHeight = 270f;
 
     private const float lightNodeSelectionHeight = 15f;
 
@@ -49,6 +47,20 @@ public class LightNodeSO : ScriptableObject
 
         // Load light node type list
         lightNodeTypeList = GameResources.Instance.lightNodeTypeList;
+
+
+        // Initialize light node class
+        if (lightNodeType.isEndBlock)
+        {
+            CreateEndLightNode();
+
+        }
+        else
+        {
+            CreateLightNode();
+        }
+
+
     }
     public Rect GetBlockSelectablePlace()
     {
@@ -56,8 +68,8 @@ public class LightNodeSO : ScriptableObject
     }
     public Rect GetBlockRect(Rect rect)
     {
-       return new Rect(rect.position.x, rect.position.y, nodeWidth, nodeHeight);
-        
+        return new Rect(rect.position.x, rect.position.y, nodeWidth, nodeHeight);
+
     }
 
     /// <summary>
@@ -91,12 +103,10 @@ public class LightNodeSO : ScriptableObject
         }
 
 
-        if (lightNode == null)
-        {
-            CreateLightNode();
-        }
+        lightNode.DrawLightNode(lightNodeType);
 
-        lightNode.DrawLightNode();
+        if (childLightNodeIDList.Count > 0 && parentLightNodeIDList.Count > 0)
+            lightNode.DrawVerificationNote(lightNodeGraph.GetLightNode(childLightNodeIDList[0]), lightNodeGraph.GetLightNode(parentLightNodeIDList[0]));
 
         if (EditorGUI.EndChangeCheck())
             EditorUtility.SetDirty(this);
@@ -111,6 +121,23 @@ public class LightNodeSO : ScriptableObject
     {
         // create start block node
         lightNode = new LightNode();
+
+        // save changes in project
+        AssetDatabase.SaveAssets();
+    }
+    public void CreateEndLightNode()
+    {
+        LightNodeSO startNode = null;
+
+        foreach (LightNodeSO node in lightNodeGraph.lightNodeList)
+            if (node.lightNodeType.isStartBlock)
+            {
+                startNode = node;
+                break;
+            }
+
+        // create start block node
+        lightNode = new LightNode(startNode);
 
         // save changes in project
         AssetDatabase.SaveAssets();

@@ -30,20 +30,20 @@ MonoBehaviour:
         rgba: 4294967021
   rect:
     serializedVersion: 2
-    x: 1166
-    y: 699
+    x: 1430
+    y: 587
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1186
-    y: 709
+    x: 1450
+    y: 597
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-8079446183272689566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +57,8 @@ MonoBehaviour:
   m_Name: LightNode
   m_EditorClassIdentifier: 
   id: 1afc4d52-c87a-427f-8949-f34018937b8f
-  parentLightNodeIDList: []
+  parentLightNodeIDList:
+  - dff843ad-d7b8-45cd-b9da-c99b8caf74ba
   childLightNodeIDList:
   - d2ed0783-d4d7-4f59-827e-5b88e152b4d8
   lightNodeGraph: {fileID: 11400000}
@@ -73,20 +74,20 @@ MonoBehaviour:
         rgba: 4294967295
   rect:
     serializedVersion: 2
-    x: -249
-    y: 698
+    x: 88
+    y: 732
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: -229
-    y: 708
+    x: 108
+    y: 742
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-7587803684353261902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,20 +118,20 @@ MonoBehaviour:
         rgba: 4294960805
   rect:
     serializedVersion: 2
-    x: 64
-    y: 699
+    x: 371
+    y: 578
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 84
-    y: 709
+    x: 391
+    y: 588
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-7351866678675944582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,20 +162,20 @@ MonoBehaviour:
         rgba: 4294960805
   rect:
     serializedVersion: 2
-    x: 880
-    y: 699
+    x: 1168
+    y: 582
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 900
-    y: 709
+    x: 1188
+    y: 592
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-7221848198052742418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,23 +203,23 @@ MonoBehaviour:
       lightIntensity: 0.2
       color:
         serializedVersion: 2
-        rgba: 4284572159
+        rgba: 4288388095
   rect:
     serializedVersion: 2
-    x: 57
+    x: 377
     y: -7
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 77
+    x: 397
     y: 3
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-7162284582486656065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,20 +250,20 @@ MonoBehaviour:
         rgba: 4294967295
   rect:
     serializedVersion: 2
-    x: -245
-    y: -6
+    x: 101
+    y: -4
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: -225
-    y: 4
+    x: 121
+    y: 6
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-6568129270480216879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,20 +294,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 1131
-    y: 326
+    x: 1427
+    y: 300
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1151
-    y: 336
+    x: 1447
+    y: 310
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-3332137747636511927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,23 +335,23 @@ MonoBehaviour:
       lightIntensity: 0.3
       color:
         serializedVersion: 2
-        rgba: 4286348543
+        rgba: 4290625023
   rect:
     serializedVersion: 2
-    x: 322
+    x: 642
     y: -5
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 342
+    x: 662
     y: 5
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-2687793014156846987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,20 +382,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 1378
-    y: 326
+    x: 1689
+    y: 300
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1398
-    y: 336
+    x: 1709
+    y: 310
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-1657404263587470500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,35 +409,37 @@ MonoBehaviour:
   m_Name: LightNode
   m_EditorClassIdentifier: 
   id: dff843ad-d7b8-45cd-b9da-c99b8caf74ba
-  parentLightNodeIDList: []
-  childLightNodeIDList: []
+  parentLightNodeIDList:
+  - d73995f9-0ceb-4cf3-b817-a3cc4f6b863c
+  childLightNodeIDList:
+  - 1afc4d52-c87a-427f-8949-f34018937b8f
   lightNodeGraph: {fileID: 11400000}
-  lightNodeType: {fileID: 11400000, guid: 8ae8651a163cb7542af2abc3e652e6e5, type: 2}
+  lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
   lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
   lightNode:
     lightingBrightness:
-      hour: 0
+      hour: 21
       minute: 0
-      lightIntensity: 0
+      lightIntensity: 0.3
       color:
         serializedVersion: 2
         rgba: 4294967295
   rect:
     serializedVersion: 2
-    x: 1748
-    y: 733
+    x: 1951
+    y: 596
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1768
-    y: 743
+    x: 1971
+    y: 606
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-1568383285255317892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,20 +470,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 59
-    y: 332
+    x: 374
+    y: 289
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 79
-    y: 342
+    x: 394
+    y: 299
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &-955342953043544907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,23 +511,23 @@ MonoBehaviour:
       lightIntensity: 0.4
       color:
         serializedVersion: 2
-        rgba: 4285831667
+        rgba: 4290164479
   rect:
     serializedVersion: 2
-    x: 595
+    x: 915
     y: -7
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 615
+    x: 935
     y: 3
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,23 +592,23 @@ MonoBehaviour:
       lightIntensity: 0.5
       color:
         serializedVersion: 2
-        rgba: 4285837043
+        rgba: 4289844735
   rect:
     serializedVersion: 2
-    x: 863
+    x: 1183
     y: -7
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 883
+    x: 1203
     y: 3
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &260224940999592938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,20 +639,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 598
-    y: 326
+    x: 904
+    y: 296
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 618
-    y: 336
+    x: 924
+    y: 306
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &705725305770672097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +668,8 @@ MonoBehaviour:
   id: d73995f9-0ceb-4cf3-b817-a3cc4f6b863c
   parentLightNodeIDList:
   - eba6f468-c78a-4657-ab61-23f461bef849
-  childLightNodeIDList: []
+  childLightNodeIDList:
+  - dff843ad-d7b8-45cd-b9da-c99b8caf74ba
   lightNodeGraph: {fileID: 11400000}
   lightNodeType: {fileID: 11400000, guid: 97fef67b33ef85b409da0f1fc6a4123c, type: 2}
   lightNodeTypeList: {fileID: 11400000, guid: 8aa6582693599db44aef27d12b47ded0, type: 2}
@@ -679,20 +683,20 @@ MonoBehaviour:
         rgba: 4294967295
   rect:
     serializedVersion: 2
-    x: 1458
-    y: 707
+    x: 1692
+    y: 592
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1478
-    y: 717
+    x: 1712
+    y: 602
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &1662164415633934296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,20 +727,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 1634
-    y: 326
+    x: 1945
+    y: 301
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1654
-    y: 336
+    x: 1965
+    y: 311
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &1759443200144073639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,20 +771,20 @@ MonoBehaviour:
         rgba: 4294960805
   rect:
     serializedVersion: 2
-    x: 343
-    y: 698
+    x: 631
+    y: 580
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 363
-    y: 708
+    x: 651
+    y: 590
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &1969503355632181770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,20 +815,20 @@ MonoBehaviour:
         rgba: 4285854701
   rect:
     serializedVersion: 2
-    x: 1130
+    x: 1450
     y: -7
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 1150
+    x: 1470
     y: 3
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &3723551376446456647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,20 +859,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 323
-    y: 332
+    x: 635
+    y: 294
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 343
-    y: 342
+    x: 655
+    y: 304
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &4408663594826230959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,20 +903,20 @@ MonoBehaviour:
         rgba: 4287299572
   rect:
     serializedVersion: 2
-    x: 869
-    y: 325
+    x: 1171
+    y: 301
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 889
-    y: 335
+    x: 1191
+    y: 311
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1
 --- !u!114 &6715145693728553240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,17 +947,17 @@ MonoBehaviour:
         rgba: 4294634176
   rect:
     serializedVersion: 2
-    x: 606
-    y: 696
+    x: 897
+    y: 578
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 626
-    y: 706
+    x: 917
+    y: 588
     width: 210
     height: 15
   isLeftClickDragging: 0
   isSelected: 0
-  isNodesPositionBlocked: 0
-  isNodesSelectionBlocked: 0
+  isNodesPositionBlocked: 1
+  isNodesSelectionBlocked: 1

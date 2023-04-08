@@ -4,9 +4,6 @@ using UnityEngine;
 
 public static class HelperUtilities
 {
-    /// <summary>
-    /// Empty string debug check
-    /// </summary>
     public static bool ValidateCheckEmptyString(Object thisObject, string fieldName, string stringToCheck)
     {
         if (stringToCheck == "")
@@ -17,9 +14,6 @@ public static class HelperUtilities
         return false;
     }
 
-    /// <summary>
-    /// list empty or contains null value check - returns true if there is an error
-    /// </summary>
     public static bool ValidateCheckEnumerableValues(Object thisObject, string fieldName, IEnumerable enumerableObjectToCheck)
     {
         bool error = false;
@@ -55,5 +49,15 @@ public static class HelperUtilities
         return error;
     }
 
+    public static bool ValidateCheckPositiveRange(Object thisObject, string fieldNameMinimum, float minimumValueToCheck, string fieldNameMaximum, float maximumValueToCheck)
+    {
+        if(minimumValueToCheck > maximumValueToCheck)
+        {
+            Debug.Log(fieldNameMinimum + " is more than " + maximumValueToCheck + " in object " + thisObject);
+            
+            return true;
+        }
 
+        return false;
+    }
 }

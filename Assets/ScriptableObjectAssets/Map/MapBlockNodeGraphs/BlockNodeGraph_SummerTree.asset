@@ -31,24 +31,24 @@ MonoBehaviour:
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
-    baseFactor: 288
+    baseFactor: 25
     minTemperature: 10
     maxTemperature: 30
-    minPolution: 10
-    maxPolution: 30
-    minRadiation: 10
-    maxRadiation: 30
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
     startBlockPrefab: {fileID: 4414790705719074528, guid: 6c0e88635fb633746bf56047289e43ed, type: 3}
   rect:
     serializedVersion: 2
-    x: 239
-    y: 505
+    x: 237
+    y: 500
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 259
-    y: 515
+    x: 257
+    y: 510
     width: 210
     height: 15
   isLeftClickDragging: 0
@@ -79,13 +79,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 5
+    connectBlockPoints: 100
     minTemperature: 15
     maxTemperature: 40
-    minPolution: 15
-    maxPolution: 40
-    minRadiation: 15
-    maxRadiation: 40
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -134,13 +134,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 2
-    minTemperature: 8.7
-    maxTemperature: 51.1
-    minPolution: 6.6
-    maxPolution: 42.2
-    minRadiation: 11.9
-    maxRadiation: 59.3
+    connectBlockPoints: 10
+    minTemperature: 8
+    maxTemperature: 50
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -154,14 +154,14 @@ MonoBehaviour:
     startBlockPrefab: {fileID: 0}
   rect:
     serializedVersion: 2
-    x: 767
-    y: 92
+    x: 768
+    y: 85
     width: 160
     height: 75
   selectableRect:
     serializedVersion: 2
-    x: 787
-    y: 102
+    x: 788
+    y: 95
     width: 210
     height: 15
   isLeftClickDragging: 0
@@ -189,13 +189,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 5
+    connectBlockPoints: 10
     minTemperature: 15
     maxTemperature: 40
-    minPolution: 15
-    maxPolution: 40
-    minRadiation: 15
-    maxRadiation: 40
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:
@@ -325,13 +325,13 @@ MonoBehaviour:
   blockNodeType: {fileID: 11400000, guid: 8aa5316811ff7464090e2a1e2175459f, type: 2}
   blockNodeTypeList: {fileID: 11400000, guid: 6d446ed8921121343939cd32c5733755, type: 2}
   connectBlockNode:
-    connectBlockPoints: 2
-    minTemperature: 6.9
-    maxTemperature: 44.7
-    minPolution: 6.8
-    maxPolution: 54.1
-    minRadiation: 5.7
-    maxRadiation: 59.3
+    connectBlockPoints: 10
+    minTemperature: 7
+    maxTemperature: 45
+    minPolution: 0
+    maxPolution: 0
+    minRadiation: 0
+    maxRadiation: 0
   stepBlockNode:
     stepBlockPrefab: {fileID: 0}
   startBlockNode:

@@ -6,7 +6,7 @@ public static class Settings
 {
     // Time system
     // second in real time in game time interval 
-    public const float secondsPerGameInterval = 0.2f;
+    public const float secondsPerGameInterval = 1f;
     // minutes in game time interval
     public const int timeInterval = 5;
 

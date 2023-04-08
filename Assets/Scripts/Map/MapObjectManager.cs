@@ -147,7 +147,7 @@ public class MapObjectManager : MonoBehaviour
 
                 return true;
             }
-            objectSettings.pointsToChangePrefab[currentIndex]++;
+            objectSettings.pointsToChangePrefab[currentIndex] += Random.Range(0, 4);
 
         }
 

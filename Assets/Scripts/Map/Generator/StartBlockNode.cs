@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StartBlockNode
 {
     // Chance to spawn every time step (for exaple: 1 clock tick => 5 min in game, then 288 tick => 1 day in game) 
-    public int baseFactor;
+    public float baseFactor;
     // Spawning settings
     public float minTemperature;
     public float maxTemperature;
@@ -18,7 +18,7 @@ public class StartBlockNode
 
     public float GetSpawnChance(Factors factors)
     {
-        return baseFactor / 288 *
+        return baseFactor / (float)288 *
             factorProbalibityCalculation(minTemperature, maxTemperature, factors.temperature) *
             factorProbalibityCalculation(minPolution, maxPolution, factors.polution) *
             factorProbalibityCalculation(minRadiation, maxRadiation, factors.radiation);
@@ -61,7 +61,7 @@ public class StartBlockNode
         }
 
         EditorGUILayout.LabelField("Base spawn amount every day: ");
-        baseFactor = EditorGUILayout.IntField(baseFactor);
+        baseFactor = EditorGUILayout.FloatField(baseFactor);
 
         EditorGUILayout.LabelField("Temperature spawn factor: ");
         minTemperature = EditorGUILayout.Slider(minTemperature, 0, maxTemperature);

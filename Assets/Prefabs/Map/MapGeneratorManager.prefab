@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4185196290283746457}
   m_Layer: 0
-  m_Name: Bacground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9212,7 +9212,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1718176017
   m_SortingLayer: -1
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9230,6 +9230,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4185196291022455471}
+  - component: {fileID: 1446609188}
+  - component: {fileID: 1446609189}
   m_Layer: 0
   m_Name: MapGeneratorManager
   m_TagString: Untagged
@@ -9247,13 +9249,50 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4185196290283746457}
   - {fileID: 8817321011701626608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1446609188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185196291022455470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f7874bd89a6ad4aae9c2cda6eaa9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundTileset:
+  - {fileID: 11400000, guid: a0064bc0e5f27464896ae25bededd996, type: 2}
+  - {fileID: 11400000, guid: 10c00bb63f97642479a13100c9696057, type: 2}
+  - {fileID: 11400000, guid: c221891296d4fad4c9b5e5f8834e6dc0, type: 2}
+  - {fileID: 11400000, guid: 52ee0e44d87be154b9e17132ce432e72, type: 2}
+  - {fileID: 11400000, guid: eef877a0c599b1a4582341b879f973d4, type: 2}
+  - {fileID: 11400000, guid: 51bac3eef2695764491ab7c25b39e0e6, type: 2}
+  - {fileID: 11400000, guid: 465121de895a3184980ae53bca13bc51, type: 2}
+  backgroundTilemap: {fileID: 4185196290363474809}
+--- !u!114 &1446609189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185196291022455470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b3332a639ea7c4f90425505260e65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockNodeGraphList:
+  - {fileID: 11400000, guid: c2d37f4daf3037f47859204cbf594908, type: 2}
+  spawnedObjectsParent: {fileID: 8817321011701626608}
+  availablePositions: []
 --- !u!1 &8228438348340676900
 GameObject:
   m_ObjectHideFlags: 0
@@ -9278,7 +9317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228438348340676900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

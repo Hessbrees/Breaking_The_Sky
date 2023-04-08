@@ -60,21 +60,24 @@ public class MapGeneratorManager : MonoBehaviour
     {
         if (isCurrentBackgroundGenerateEnded)
         {
-            Tile newTile;
+            Tile newTile = null;
 
-            if (factorsManager.currentFactors.polution > 20)
+            if (factorsManager.currentFactors.temperature < 40)
             {
                 newTile = backgroundTileset[1];
             }
-            else if (factorsManager.currentFactors.temperature > 40)
+            else if (factorsManager.currentFactors.temperature < 60)
             {
-                newTile = backgroundTileset[2];
+                newTile = backgroundTileset[6];
             }
-            else
+            else if (factorsManager.currentFactors.temperature < 80)
             {
                 newTile = backgroundTileset[0];
             }
-
+            else
+            {
+                newTile = backgroundTileset[3];
+            }
             if (newTile == currentBackgroundTile) return;
 
             currentBackgroundTile = newTile;

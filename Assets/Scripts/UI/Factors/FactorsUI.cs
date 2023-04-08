@@ -25,7 +25,7 @@ public class FactorsUI : MonoBehaviour
     }
     private void ChangeTextFactorsValue_OnTimeChange(TimeChangeEvent timeChangeEvent, TimeChangeArg timeChangeArg)
     {
-        temperature.text = factorsManager.currentFactors.temperature.ToString();
+        temperature.text = (factorsManager.currentFactors.temperature -40).ToString();
         polution.text = factorsManager.currentFactors.polution.ToString();
         radiation.text = factorsManager.currentFactors.radiation.ToString();
     }

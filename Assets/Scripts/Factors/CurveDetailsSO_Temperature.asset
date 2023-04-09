@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9813e701ddfff444b713a35102a816b, type: 3}
+  m_Name: CurveDetailsSO_Temperature
+  m_EditorClassIdentifier: 
+  minMaxCurve:
+    m_Mode: 1
+    m_CurveMultiplier: 20
+    m_CurveMin:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_CurveMax:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.003742218
+        value: -0.015084233
+        inSlope: 0.014815026
+        outSlope: 0.014815026
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23504701
+        value: -0.011657447
+        inSlope: 0.06493439
+        outSlope: 0.06493439
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.43181604
+        value: 0.010981567
+        inSlope: 0.06695962
+        outSlope: 0.06695962
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.3844501
+        outWeight: 0.56434363
+      - serializedVersion: 3
+        time: 0.7275027
+        value: 0.014481174
+        inSlope: -0.036153432
+        outSlope: -0.036153432
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9965482
+        value: -0.008156955
+        inSlope: -0.08414239
+        outSlope: -0.08414239
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ConstantMin: 0
+    m_ConstantMax: 0

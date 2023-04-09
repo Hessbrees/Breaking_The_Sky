@@ -5,11 +5,14 @@ using Zenject;
 
 public class TemperatureControl : MonoBehaviour
 {
+
     [Inject(Id = "Factors")]
     private FactorsManager factorsManager;
 
     [Inject(Id = "TimeManager")]
     private TimeChangeEvent timeChangeEvent;
+
+    [SerializeField] private CurveDetailsSO curveDetails;
 
     private void OnEnable()
     {
@@ -22,16 +25,15 @@ public class TemperatureControl : MonoBehaviour
 
     private void TryChangeTemperature_OnTimeChange(TimeChangeEvent timeChangeEvent, TimeChangeArg timeChangeArg)
     {
-        if (timeChangeArg.gameHour > 10 && timeChangeArg.gameHour < 16)
-        {
-            factorsManager.currentFactors.temperature += Random.Range(-1, 6);
-        }
-        else
-        {
-            factorsManager.currentFactors.temperature += Random.Range(-3, 1);
-        }
+        GetRandomTemperatureChange(timeChangeArg.gameHour);
+    }
 
-        if (factorsManager.currentFactors.temperature > 100) factorsManager.currentFactors.temperature = 100;
-        if (factorsManager.currentFactors.temperature < 0) factorsManager.currentFactors.temperature = 0;
+    private void GetRandomTemperatureChange(float hour)
+    {
+
+        factorsManager.currentFactors.temperature += (float)System.Math.Round(curveDetails.GetValueFromCurve(hour / 24),2);
+
+        factorsManager.currentFactors.temperature =
+            HelperUtilities.LimitValueToTargetRange(Settings.minimumTemperaturePoints, Settings.maximumTemperaturePoints, factorsManager.currentFactors.temperature);
     }
 }

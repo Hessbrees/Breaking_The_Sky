@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class Settings
@@ -22,6 +23,17 @@ public static class Settings
 
     #endregion
 
+
+    #region FACTORS
+
+    public static float minimumTemperaturePoints = 0;
+    public static float maximumTemperaturePoints = 100;
+    public static float minimumPolutionPoints = 0;
+    public static float maximumPolutionPoints = 100;
+    public static float minimumRadiationPoints = 0;
+    public static float maximumRadiationPoints = 100;
+
+    #endregion
     // check if value is in range
     public static bool CheckValueInRange(float value,float minValue, float maxValue)
     {

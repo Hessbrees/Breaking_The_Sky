@@ -4,6 +4,14 @@ using UnityEngine;
 
 public static class HelperUtilities
 {
+    public static float LimitValueToTargetRange(float minValue, float maxValue, float currentValue)
+    {
+        if(currentValue > maxValue) currentValue = maxValue;
+        else if(currentValue < minValue) currentValue = minValue;
+
+        return currentValue;
+    }
+
     public static bool ValidateCheckEmptyString(Object thisObject, string fieldName, string stringToCheck)
     {
         if (stringToCheck == "")

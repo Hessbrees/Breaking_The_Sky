@@ -424,6 +424,18 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 2.109375
       objectReference: {fileID: 0}
+    - target: {fileID: 1696278421773855121, guid: 8f6a1fd4f44050d419a63ebab7a1cd03, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696278421773855121, guid: 8f6a1fd4f44050d419a63ebab7a1cd03, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696278421773855121, guid: 8f6a1fd4f44050d419a63ebab7a1cd03, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1696278421773855122, guid: 8f6a1fd4f44050d419a63ebab7a1cd03, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -612,6 +624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3821455306921206837, guid: 99d23e5d7646fce488c49e450b46ba84, type: 3}
+      propertyPath: curveDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: 7810b845b35b92142bab3492d9e98fbb, type: 2}
     - target: {fileID: 3916377678253400960, guid: 99d23e5d7646fce488c49e450b46ba84, type: 3}
       propertyPath: m_RootOrder
       value: 9

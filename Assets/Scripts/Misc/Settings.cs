@@ -33,6 +33,14 @@ public static class Settings
     public static float minimumRadiationPoints = 0;
     public static float maximumRadiationPoints = 100;
 
+
+    #endregion
+
+    #region Lighting
+
+    public static float maxLightDecraseIntensityByPolution = 0.2f;
+
+
     #endregion
     // check if value is in range
     public static bool CheckValueInRange(float value,float minValue, float maxValue)

@@ -12,7 +12,7 @@ public class TemperatureControl : MonoBehaviour
     [Inject(Id = "TimeManager")]
     private TimeChangeEvent timeChangeEvent;
 
-    [SerializeField] private CurveDetailsSO curveDetails;
+    [SerializeField] private CurveDetailsSO temperatureCurveDetails;
 
     private void OnEnable()
     {
@@ -30,8 +30,7 @@ public class TemperatureControl : MonoBehaviour
 
     private void GetRandomTemperatureChange(float hour)
     {
-
-        factorsManager.currentFactors.temperature += (float)System.Math.Round(curveDetails.GetValueFromCurve(hour / 24),2);
+        factorsManager.currentFactors.temperature += (float)System.Math.Round(temperatureCurveDetails.GetValueFromCurve(hour / 24),2);
 
         factorsManager.currentFactors.temperature =
             HelperUtilities.LimitValueToTargetRange(Settings.minimumTemperaturePoints, Settings.maximumTemperaturePoints, factorsManager.currentFactors.temperature);

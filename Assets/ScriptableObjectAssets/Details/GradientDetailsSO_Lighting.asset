@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bbf768315f27d04aaa0b1aa152ee372, type: 3}
-  m_Name: LightNodeType_None
+  m_Script: {fileID: 11500000, guid: 5c799aa9df9f5dd4cb71c532e3011370, type: 3}
+  m_Name: GradientDetailsSO_Lighting
   m_EditorClassIdentifier: 
-  lightNodeTypeName: None
-  displayInBlockGraphEditor: 1
-  isStartBlock: 0
-  isStepBlock: 0
-  isEndBlock: 0
-  isNone: 1

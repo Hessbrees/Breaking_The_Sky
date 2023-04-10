@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class HelperUtilities
 {
+    public static int GetTimeInMinutes(int hour, int minute)
+    {
+        return hour * 60 + minute;
+    }
     public static float LimitValueToTargetRange(float minValue, float maxValue, float currentValue)
     {
         if(currentValue > maxValue) currentValue = maxValue;

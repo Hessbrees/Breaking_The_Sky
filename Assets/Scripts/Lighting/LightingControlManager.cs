@@ -6,10 +6,8 @@ using Zenject;
 
 public class LightingControlManager : MonoBehaviour
 {
-    [SerializeField] private LightNodeGraphSO lightingGraph;
-
-    LightNode currentLightingNode;
-    LightNode nextLightingNode;
+    [SerializeField] private CurveDetailsSO curveDetails;
+    [SerializeField] private GradientDetailsSO gradientDetails;
 
     [Inject(Id = "TimeManager")]
     private TimeChangeEvent timeChangeEvent;
@@ -29,45 +27,23 @@ public class LightingControlManager : MonoBehaviour
 
     private void TryChangeLight_OnTimeChange(TimeChangeEvent timeChangeEvent, TimeChangeArg timeChangeArg)
     {
-        if (CheckActualLightingNodes(ConvertTimeToMinutes(timeChangeArg.gameHour, timeChangeArg.gameMinute)))
-        {
-            light2D.intensity = currentLightingNode.lightingBrightness.lightIntensity;
-            light2D.color = currentLightingNode.lightingBrightness.color;
-        }
+        int timeMinute = HelperUtilities.GetTimeInMinutes(timeChangeArg.gameHour, timeChangeArg.gameMinute);
 
+        TryChangeLightIntensity(timeMinute);
 
+        TryChangeLightColor(timeMinute);
     }
-    private int ConvertTimeToMinutes(int hour, int minute)
+    private void TryChangeLightColor(int minute)
     {
-        return hour * 60 + minute;
+        light2D.color = gradientDetails.GetColorFromGradient((float)minute / 1440f);
     }
-    private bool CheckActualLightingNodes(float timeMinutes)
+    private void TryChangeLightIntensity(int minute)
     {
-        if (currentLightingNode == null || nextLightingNode == null)
-        {
-            FindLightNodes(timeMinutes);
-            return true;
-        }
-
-        if (nextLightingNode.GetTimeInMinutes() > timeMinutes && timeMinutes !=0) return false;
-
-        FindLightNodes(timeMinutes);
-
-        return true;
+        light2D.intensity = GetLightByDayTime(minute);
     }
-    private void FindLightNodes(float timeMinutes)
+
+    private float GetLightByDayTime(int minute)
     {
-        float currentMinutes = 1440;
-
-        foreach (LightNodeSO lightNodeSO in lightingGraph.lightNodeList)
-        {
-            if (timeMinutes < lightNodeSO.lightNode.GetTimeInMinutes() && currentMinutes > lightNodeSO.lightNode.GetTimeInMinutes())
-            {
-                nextLightingNode = lightNodeSO.lightNode;
-                currentLightingNode = lightNodeSO.lightNodeGraph.GetLightNode(lightNodeSO.parentLightNodeIDList[0]).lightNode;
-                currentMinutes = lightNodeSO.lightNode.GetTimeInMinutes();
-
-            }
-        }
+        return curveDetails.GetValueFromCurve((float)minute / 1440f);
     }
 }

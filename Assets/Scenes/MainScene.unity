@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a590f2b7720304daae53abb19e2d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightingGraph: {fileID: 11400000, guid: c1e0f14612e57e94e84cd0873c8d4ee0, type: 2}
+  curveDetails: {fileID: 11400000, guid: e035c3d5bc9efee40b2ff1cdc4f76f3a, type: 2}
 --- !u!4 &332321060
 Transform:
   m_ObjectHideFlags: 0
@@ -556,6 +556,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2675067477232035157, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_YDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_ZDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_CameraDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675067478321052634, guid: 4c40515a8d09df84780c9611480ff7eb, type: 3}
+      propertyPath: m_DeadZoneHeight
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -904,6 +928,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 946683776, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 946683776, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1610889446144726193, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -951,6 +983,10 @@ PrefabInstance:
     - target: {fileID: 3783990841394491395, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062253536882886403, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d9f205087177743a4b70e46598ee9e, type: 3}

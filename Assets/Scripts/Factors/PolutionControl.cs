@@ -32,4 +32,9 @@ public class PolutionControl : MonoBehaviour
     {
 
     }
+
+    private void ChangeLightIntensivity()
+    {
+       
+    }
 }

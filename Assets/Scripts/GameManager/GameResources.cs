@@ -18,7 +18,5 @@ public class GameResources : MonoBehaviour
         }
     }
     
-    public BlockNodeTypeListSO blockNodeTypeList;
-    public LightNodeTypeListSO lightNodeTypeList;
-    
+    public BlockNodeTypeListSO blockNodeTypeList;    
 }

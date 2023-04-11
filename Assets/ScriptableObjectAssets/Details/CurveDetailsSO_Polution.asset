@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CurveDetailsSO_Polution
   m_EditorClassIdentifier: 
   minMaxCurve:
-    m_Mode: 0
-    m_CurveMultiplier: 0
+    m_Mode: 1
+    m_CurveMultiplier: 10
     m_CurveMin:
       serializedVersion: 2
       m_Curve: []
@@ -23,7 +23,43 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_CurveMax:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.03954075
+        outSlope: -0.03954075
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.20612453
+        value: -0.008150319
+        inSlope: -0.0013420589
+        outSlope: -0.0013420589
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.77897036
+        outWeight: 0.42858973
+      - serializedVersion: 3
+        time: 0.6033304
+        value: 0.018789299
+        inSlope: -0.000459281
+        outSlope: -0.000459281
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.4201139
+      - serializedVersion: 3
+        time: 0.9933606
+        value: 0.0002131596
+        inSlope: -0.046252545
+        outSlope: -0.046252545
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.59898204
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

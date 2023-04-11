@@ -23,6 +23,13 @@ public static class Settings
 
     #endregion
 
+    #region HEALTH
+
+    public static int minimumDamageToTake = 1;
+    public static int maxDefenceColorValue = 100;
+
+    #endregion
+
 
     #region FACTORS
 

@@ -10,6 +10,8 @@ public class AnimatePlayer : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+
+        player.InitAllComponents();
     }
 
     private void OnEnable()

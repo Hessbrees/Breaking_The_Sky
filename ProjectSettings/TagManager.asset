@@ -44,15 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Structures
+  - name: Structures_Inside
     uniqueID: 1666547001
+    locked: 0
+  - name: Structures_Outside
+    uniqueID: 1162425635
     locked: 0
   - name: Player
     uniqueID: 2743370127
     locked: 0
   - name: UI
     uniqueID: 2840168731
-    locked: 0
-  - name: Invisible
-    uniqueID: 1162425635
     locked: 0

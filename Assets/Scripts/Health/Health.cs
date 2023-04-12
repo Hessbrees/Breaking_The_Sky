@@ -9,10 +9,10 @@ public class Health : MonoBehaviour
     [SerializeField] HealthDetailsSO healthDetails;
 
     private int maxHealth;
-    private int currentHealth;
+    private float currentHealth;
 
     private float damageMultiplerEffect;
-    private float regenerationMultiplerEffect;
+    private float healReductionEffect;
 
     private int defence;
 
@@ -21,41 +21,84 @@ public class Health : MonoBehaviour
 
     private bool isDead;
     private HealthEvent healthEvent;
+    private StatusEffects statusEffects;
 
+    private Coroutine damageCoroutine;
     private void Awake()
     {
         healthEvent = GetComponent<HealthEvent>();
+        statusEffects = GetComponent<StatusEffects>();
     }
 
-    public void TakeDamage(int amount)
+    private void OnEnable()
+    {
+        statusEffects.statusEffectsEvent.OnStatusEffects += SetHealthStatusEffects_OnStatusEffects;
+    }
+
+    private void OnDisable()
+    {
+        statusEffects.statusEffectsEvent.OnStatusEffects -= SetHealthStatusEffects_OnStatusEffects;
+    }
+
+    private void SetHealthStatusEffects_OnStatusEffects(StatusEffectsEvent statusEffectsEvent, StatusEffectsArgs statusEffectsArgs)
+    {
+        SetHealthStatusEffects(statusEffectsArgs.healReduction, statusEffectsArgs.damageTaken);
+
+        StartDealingDamageOverTime(statusEffectsArgs.damageOverTime);
+    }
+    private void SetHealthStatusEffects(float healReduction, float damageTaken)
+    {
+        healReductionEffect = healReduction;
+        damageMultiplerEffect = damageTaken;
+    }
+
+    private void StartDealingDamageOverTime(float damage)
+    {
+        if (damageCoroutine != null)
+        {
+            StopCoroutine(damageCoroutine);
+        }
+
+        damageCoroutine = StartCoroutine(DamageCoroutine(damage));
+    }
+    private IEnumerator DamageCoroutine(float damage)
+    {
+        while (true)
+        {
+            TakeDamage(damage);
+
+            yield return new WaitForSeconds(StatusEffectSettings.damageOverTime_TimePeriod);
+        }
+    }
+    public void TakeDamage(float amount)
     {
         if (!isImmuneToDamage)
         {
-            int damage = Mathf.FloorToInt(amount * damageMultiplerEffect - defence);
+            float damage = amount * damageMultiplerEffect - defence;
 
             if (damage < Settings.minimumDamageToTake) damage = Settings.minimumDamageToTake;
 
             currentHealth -= damage;
 
-            currentHealth = (int)HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
+            currentHealth = HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
 
         }
 
-        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth,defence, isDead);
+        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth, defence, isDead);
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         if (!isImmuneToHeal)
         {
-            int heal = Mathf.FloorToInt(amount * regenerationMultiplerEffect);
+            float heal = Mathf.FloorToInt(amount * healReductionEffect);
 
             currentHealth += heal;
 
-            currentHealth = (int)HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
+            currentHealth = HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
         }
 
-        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth,defence, isDead);
+        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth, defence, isDead);
     }
 
     private float GetPercentableHealth()
@@ -68,6 +111,6 @@ public class Health : MonoBehaviour
         currentHealth = healthDetails.startingHealth;
         defence = healthDetails.defence;
 
-        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth,defence, isDead);
+        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth, defence, isDead);
     }
 }

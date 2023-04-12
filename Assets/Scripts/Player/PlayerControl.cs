@@ -12,12 +12,15 @@ public class PlayerControl : MonoBehaviour
     private Player player;
     private float moveSpeed;
     private bool isPlayerMovementDisabled = false;
-
+    private StatusEffects statusEffects;
+    private float movementStatusEffect;
     private void Awake()
     {
         player = GetComponent<Player>();
 
         moveSpeed = movementDetails.GetMoveSpeed();
+
+        statusEffects = GetComponent<StatusEffects>();
     }
 
     private void Start()
@@ -25,9 +28,29 @@ public class PlayerControl : MonoBehaviour
         SetPlayerAnimationSpeed();
     }
 
+    private void OnEnable()
+    {
+        statusEffects.statusEffectsEvent.OnStatusEffects += MovementStatusEffect_OnStatusEffects;
+    }
+    private void OnDisable()
+    {
+        statusEffects.statusEffectsEvent.OnStatusEffects -= MovementStatusEffect_OnStatusEffects;
+    }
+
+    private void MovementStatusEffect_OnStatusEffects(StatusEffectsEvent statusEffectsEvent, StatusEffectsArgs statusEffectsArgs)
+    {
+        MovementStatusEffect(statusEffectsArgs.movementReduction);
+        
+        SetPlayerAnimationSpeed();
+    }
+    private void MovementStatusEffect(float movementReduction)
+    {
+        movementStatusEffect = movementReduction;
+    }
+
     private void SetPlayerAnimationSpeed()
     {
-        player.animator.speed = moveSpeed / Settings.baseSpeedForPlayerAnimations;
+        player.animator.speed = (moveSpeed - moveSpeed * movementStatusEffect) / Settings.baseSpeedForPlayerAnimations;
     }
 
     private void Update()

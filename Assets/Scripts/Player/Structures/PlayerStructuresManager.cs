@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
 
 public class PlayerStructuresManager : MonoBehaviour
 {
@@ -9,11 +10,16 @@ public class PlayerStructuresManager : MonoBehaviour
 
     [SerializeField] private GameObject roofTilemap;
 
+    [Inject(Id = "Player")]
+    Player player;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == Names.playerTag) 
         {
             roofTilemap.SetActive(false);
+        
+            player.playerStatusEffectsControl.DeactivateRadiationSickness();
         }
     }
 
@@ -22,6 +28,8 @@ public class PlayerStructuresManager : MonoBehaviour
         if (collision.tag == Names.playerTag)
         {
             roofTilemap.SetActive(true);
+
+            player.playerStatusEffectsControl.ActivateRadiationSickness();
         }
     }
 }

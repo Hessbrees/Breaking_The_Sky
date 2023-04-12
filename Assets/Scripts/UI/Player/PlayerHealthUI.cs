@@ -43,9 +43,9 @@ public class PlayerHealthUI : MonoBehaviour
 
     }
 
-    private void UpdateHealthValue(int currentHealth)
+    private void UpdateHealthValue(float currentHealth)
     {
-        currentHealthText.text = currentHealth.ToString();
+        currentHealthText.text = currentHealth.ToString("f0");
     }
 
     private void UpdateHealthColor(float healthInPercent)

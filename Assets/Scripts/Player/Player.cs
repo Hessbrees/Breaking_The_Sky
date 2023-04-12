@@ -13,6 +13,8 @@ using UnityEngine;
 [RequireComponent(typeof(AnimatePlayer))]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(HealthEvent))]
+[RequireComponent(typeof(StatusEffectsEvent))]
+[RequireComponent(typeof(StatusEffects))]
 [DisallowMultipleComponent]
 public class Player : MonoBehaviour
 {
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public MovementByVelocityEvent movementByVelocityEvent;
     [HideInInspector] public HealthEvent healthEvent;
     [HideInInspector] public Health health;
+    [HideInInspector] public StatusEffects statusEffects;
+    [HideInInspector] public PlayerStatusEffectsControl playerStatusEffectsControl;
 
     private bool isComponentsInitialized = false;
     private void Awake()
@@ -33,6 +37,8 @@ public class Player : MonoBehaviour
     {
         if (isComponentsInitialized) return;
 
+        playerStatusEffectsControl = GetComponent<PlayerStatusEffectsControl>();
+        statusEffects = GetComponent<StatusEffects>();
         healthEvent = GetComponent<HealthEvent>();
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
@@ -47,5 +53,6 @@ public class Player : MonoBehaviour
     {
         health.SetStartingHealth();
     }
+
 
 }

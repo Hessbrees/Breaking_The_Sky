@@ -8,9 +8,9 @@ public static class StatusEffectSettings
 
     #region RadiationSickness
 
-    public static float radiationSicknessDuration_Lvl1 = 60f;
-    public static float radiationSicknessDuration_Lvl2 = 120f;
-    public static float radiationSicknessDuration_Lvl3 = 240f;
+    public static float radiationSicknessDuration_Lvl1 = 15f;
+    public static float radiationSicknessDuration_Lvl2 = 30f;
+    public static float radiationSicknessDuration_Lvl3 = 60f;
 
     public static float radiationSicknessDamageReduction_Lvl1 = 0.1f;
     public static float radiationSicknessDamageReduction_Lvl2 = 0.2f;

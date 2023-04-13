@@ -35,21 +35,20 @@ public class PlayerStatusEffectsControl : MonoBehaviour
     }
     private IEnumerator RadiationSicknessCoroutine()
     {
+        radiationSickenssLvl++;
+
         while (true)
         {
-            if(radiationSickenssLvl <3)
-            {
-            statusEffects.ActivateRadiationSickness(radiationSickenssLvl);
-            radiationSickenssLvl++;
-            }
 
-            if(radiationSickenssLvl == 1)
+            statusEffects.ActivateRadiationSickness(radiationSickenssLvl);
+
+            if (radiationSickenssLvl == 1)
             {
-            yield return new WaitForSeconds(StatusEffectSettings.radiationSicknessDuration_Lvl1);
+                yield return new WaitForSeconds(StatusEffectSettings.radiationSicknessDuration_Lvl1);
             }
-            else if( radiationSickenssLvl == 2)
+            else if (radiationSickenssLvl == 2)
             {
-            yield return new WaitForSeconds(StatusEffectSettings.radiationSicknessDuration_Lvl2);
+                yield return new WaitForSeconds(StatusEffectSettings.radiationSicknessDuration_Lvl2);
             }
             else if (radiationSickenssLvl == 3)
             {
@@ -57,6 +56,8 @@ public class PlayerStatusEffectsControl : MonoBehaviour
             }
 
             if (radiationSickenssLvl == 3) break;
+
+            radiationSickenssLvl++;
         }
     }
 

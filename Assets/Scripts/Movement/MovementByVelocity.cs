@@ -48,8 +48,6 @@ public class MovementByVelocity : MonoBehaviour
 
     private void MoveRigidBody(Vector2 moveDirection, float moveSpeed)
     {
-        Debug.Log("move " + moveSpeed + " " + movementStatusEffect);
-
         movementRigidbody.velocity = moveDirection * (moveSpeed - moveSpeed * movementStatusEffect);
     }
 }

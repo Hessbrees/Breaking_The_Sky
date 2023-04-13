@@ -59,13 +59,15 @@ public class Health : MonoBehaviour
             StopCoroutine(damageCoroutine);
         }
 
+        if (damage == 0) return;
+
         damageCoroutine = StartCoroutine(DamageCoroutine(damage));
     }
     private IEnumerator DamageCoroutine(float damage)
     {
         while (true)
         {
-            TakeDamage(damage);
+            TakeDamageOverTime(damage);
 
             yield return new WaitForSeconds(StatusEffectSettings.damageOverTime_TimePeriod);
         }
@@ -81,9 +83,18 @@ public class Health : MonoBehaviour
             currentHealth -= damage;
 
             currentHealth = HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
-
         }
+        healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth, defence, isDead);
+    }
 
+    public void TakeDamageOverTime(float amount)
+    {
+        if (!isImmuneToDamage)
+        {
+            currentHealth -= amount;
+
+            currentHealth = HelperUtilities.LimitValueToTargetRange(0, maxHealth, currentHealth);
+        }
         healthEvent.CallHealthEvent(GetPercentableHealth(), currentHealth, maxHealth, defence, isDead);
     }
 

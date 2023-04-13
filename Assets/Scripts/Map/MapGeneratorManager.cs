@@ -11,7 +11,7 @@ public class MapGeneratorManager : MonoBehaviour
     [SerializeField] List<Tile> backgroundTileset = new List<Tile>();
     [SerializeField] Tilemap backgroundTilemap;
 
-    private int[] tileMapBorder = new int[] { -15, 15, -16, 14 }; 
+    private int[] tileMapBorder; 
 
     [Inject(Id = "Factors")]
     FactorsManager factorsManager;
@@ -27,6 +27,8 @@ public class MapGeneratorManager : MonoBehaviour
     Randomizer randomizer;
     private void Awake()
     {
+        tileMapBorder = new int[] { Settings.startingXMapPositionSpawn,Settings.endingXMapPositionSpawn, Settings.startingYMapPositionSpawn, Settings.endingYMapPositionSpawn };
+
         mapObjectManager = GetComponent<MapObjectManager>();
         randomizer = new Randomizer(tileMapBorder[0], tileMapBorder[1], tileMapBorder[2], tileMapBorder[3]);
 

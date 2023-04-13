@@ -17,6 +17,8 @@ public class MapObjectManager : MonoBehaviour
     private Queue<GameObject> objectToAddQueue = new Queue<GameObject>();
     private Queue<GameObject> objectToRemoveQueue = new Queue<GameObject>();
 
+    [Inject(Id = "PlayerStructures")]
+    private PlayerStructuresManager playerStructuresManager;
 
     public List<Vector2> availablePositions;
     private void Awake()
@@ -51,6 +53,16 @@ public class MapObjectManager : MonoBehaviour
             {
                 availablePositions.Add(new Vector2(x, y));
             }
+
+        RemovePlayerStructuresFromAvailablePositions();
+    }
+
+    public void RemovePlayerStructuresFromAvailablePositions()
+    {
+        foreach(var item in playerStructuresManager.GetPlayerStructuresPositions())
+        {
+            availablePositions.Remove(item);
+        }    
     }
 
     public void UpdateObjectInMap(Factors factors)

@@ -11,6 +11,16 @@ public static class Settings
     // minutes in game time interval
     public const int timeInterval = 5;
 
+    #region MAP
+
+    public static int startingXMapPositionSpawn = -100;
+    public static int startingYMapPositionSpawn = -100;
+    public static int endingXMapPositionSpawn = 100;
+    public static int endingYMapPositionSpawn = 100;
+    
+
+    #endregion
+
     #region PLAYER ANIMATOR PARAMETERS
 
     public static int isIdle = Animator.StringToHash("isIdle");
